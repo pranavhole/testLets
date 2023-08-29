@@ -51,7 +51,7 @@ console.log(data);
     setShowEarningGraph(true);
   }
   const handleCopyReferralCode = () => {
-    let text = 'http://localhost:3000/reg?refer=' + user.referralCode
+    let text = 'https://tt-i9w7.onrender.com/reg?refer=' + user.referralCode
     navigator.clipboard.writeText(text);
     setIsCopied(true);
     setTimeout(() => {

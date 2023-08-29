@@ -11,10 +11,10 @@ export default function Course1(data) {
         buyer_name:data.data.name,
         email:data.data.email,
         phone:data.data.phone,
-        redirect_url:`http://localhost:4000/payment/callback?user_id=${data.data._id}`,
+        redirect_url:`https://testlt.onrender.com/payment/callback?user_id=${data.data._id}`,
         webhooks_url:'/webhook/'
       };
-      axios.post('http://localhost:4000/payment',info)
+      axios.post('https://testlt.onrender.com/payment',info)
       .then(res=>{
         console.log('payment_request', res.data);
         // console.log(res)
