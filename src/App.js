@@ -8,6 +8,8 @@ import Dashboard from "./components/Dashboard/Dashboard";
 import About from "./components/About/About";
 import Courses from "./components/Courses/Courses";
 import Course1 from "./components/Courses/Course1";
+import Course2 from "./components/Courses/Course2";
+import Course3 from "./components/Courses/Course3";
 import RegistrationForm from "./components/Home/registration";
 import MyCoursesPage from "./components/myLearning/MyLearning"
 import Login from "./components/Login";
@@ -49,6 +51,8 @@ function App() {
           <Route path="Discussion" element={<DiscussionSection />} />
           <Route path="/reg" element={<RegistrationForm />} />
           <Route path='/tread' element={<StockChart />} />
+          <Route path="/course2" element={<Course2 data={user}/>}/>
+          <Route path="/course3" element={<Course3 data={user}/>}/>
           {/* <Route path="/login" element={<Login />} /> */}
         </Route>
       </Routes>

@@ -3,6 +3,13 @@ import axios from 'axios';
 
 
 export default function Course1(data) {
+  if(data.data.Payment==="SuccessFully" && data.data.courses==="Course1"){
+    return(
+      <>
+        <h1>You had purchesed this course</h1>
+      </>
+    )
+  }
   const handlePayment = async () => {
     console.log(data.data.city);
       const info={
