@@ -7,50 +7,51 @@ import { useLocation } from 'react-router-dom';
 import { useSearchParams } from 'react-router-dom';
 function App() {
   const history = useNavigate();
+  const [searchParams] = useSearchParams();
+  const refer = searchParams.get('refer');
   const [user, setUser] = useState({
     name: "",
     email: "",
     password: "",
     phone: "",
-    telegram:"",
+    tele: "",
     city: "",
     state: "",
     pincode: "",
-    referralCode: "",
+    referralCode: refer || "", // Set the referral code if available in the URL
   });
-  const [searchParams] = useSearchParams();
-  const refer=searchParams.get('refer')
-  
+
   const handleChange = e => {
     const { name, value } = e.target;
     setUser({
       ...user,
-      [name]: value
-    })
-    }
+      [name]: value,
+    });
+  };
 
   const register = () => {
-    const { name, email, password, phone, city, state,telegram, pincode, referralCode } = user;
-    console.log(user)
-    if (email.slice(-9) === 'gmail.com') {
+    const { name, email, password, phone, city, state, tele, pincode, referralCode } = user;
+
+    if (email.endsWith('gmail.com')) {
       if (name && email && password && phone && city && state && pincode) {
-        axios.post('http://localhost:4000/reg', user)
+        axios
+          .post('https://testlt.onrender.com/reg', user)
           .then(res => {
-            console.log(res);
             if (res.data === 'User already exists') {
-              toast('user already exist');
-            }
-            else {
+              toast('User already exists');
+            } else {
               toast(res.data);
-              history('/login')
+              history('/');
             }
           })
+          .catch(error => {
+            console.log(error);
+          });
       }
+    } else {
+      toast('Only Gmail addresses are allowed');
     }
-    else {
-      toast('Only Gmail are allowed')
-    }
-  }
+  };
 
   return (
 
@@ -107,7 +108,7 @@ function App() {
       />
       <input
         type="text"
-        name="telegram"
+        name="tele"
         placeholder="telegram"
         value={user.telegram}
         onChange={handleChange}
@@ -121,23 +122,24 @@ function App() {
         onChange={handleChange}
         className="w-full px-4 py-2 mb-4 rounded border border-gray-300 focus:outline-none focus:border-blue-500"
       />
-       {refer ? (
+         {refer ? (
         <input
-        type="text"
-        name="referralCode"
-        placeholder="Referral Code"
-        value={refer}
-        className="w-full px-4 py-2 mb-4 rounded border border-gray-300 focus:outline-none focus:border-blue-500"
-      />
+          type="text"
+          name="referralCode"
+          placeholder="Referral Code"
+          value={user.referralCode}
+          readOnly // Prevent editing if referral code is preset
+          className="w-full px-4 py-2 mb-4 rounded border border-gray-300 focus:outline-none focus:border-blue-500"
+        />
       ) : (
         <input
-        type="text"
-        name="referralCode"
-        placeholder="Referral Code"
-        value={user.referralCode}
-        onChange={handleChange}
-        className="w-full px-4 py-2 mb-4 rounded border border-gray-300 focus:outline-none focus:border-blue-500"
-      />
+          type="text"
+          name="referralCode"
+          placeholder="Referral Code"
+          value={user.referralCode}
+          onChange={handleChange}
+          className="w-full px-4 py-2 mb-4 rounded border border-gray-300 focus:outline-none focus:border-blue-500"
+        />
       )}
       
       <button

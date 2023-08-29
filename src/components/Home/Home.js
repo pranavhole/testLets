@@ -42,8 +42,8 @@ function Home() {
   ];
 
   const containerStyles = {
-    width: "90vw",
-    height: "80vh",
+    // width: "90vw",
+    // height: "80vh",
     margin: "0 auto",
   };
 
@@ -62,26 +62,26 @@ function Home() {
 return(
   <>
       <div className="flex flex-wrap justify-evenly">
-        <div className="flex flex-col justify-center space-y-4 py-8">
-          <div style={containerStyles}>
+        <div className="flex flex-col justify-center space-y-4 py-8 max-sm:p-0">
+          <div style={containerStyles} className="w-[90vw] h-[80vh] max-sm:w-[100vw]">
             <ImageSlider slides={slides} />
           </div>
 
           <div className=" flex flex-col justify-center items-center">
-          <div style={titleStyles} className="m-8 h-auto rounded-none text-center font-mulish text-4xl font-bold leading-tight tracking-normal text-[rgba(45, 85, 47, 1)]">We offer the following Stock Trading Courses</div>
+          <div style={titleStyles} className="m-8 h-auto rounded-none text-center font-mulish text-4xl font-bold leading-tight tracking-normal text-[rgba(45, 85, 47, 1)]  max-sm:text-xl max-sm:w-72 max-sm:m-2">We offer the following Stock Trading Courses</div>
             <dl className="justify-center dictionary flex">
               {CourseCard.map(createCard)}
             </dl>
           </div>
 
           <div className="flex flex-col items-center text-center">
-            <div  style={titleStyles} className="m-8 h-auto rounded-none font-mulish text-4xl font-bold leading-tight tracking-normal text-[rgba(45, 85, 47, 1)]">WHY YOU SHOULD JOIN LET'S TRADE INDIA?</div>
+            <div  style={titleStyles} className="m-8 h-auto rounded-none font-mulish text-4xl font-bold leading-tight tracking-normal text-[rgba(45, 85, 47, 1)] max-sm:text-xl max-sm:w-72 max-sm:m-2">WHY YOU SHOULD JOIN LET'S TRADE INDIA?</div>
             <Middle />
           </div>
 
           <div className="flex flex-col items-center text-center m-4">
-            <div style={titleStyles} className="m-8 h-auto rounded-none font-mulish text-4xl font-bold leading-tight tracking-normal text-[rgba(45, 85, 47, 1)]">HOW DOES IT WORK?</div>
-            <div style={paraStyle}>
+            <div style={titleStyles} className="m-8 h-auto rounded-none font-mulish text-4xl font-bold leading-tight tracking-normal text-[rgba(45, 85, 47, 1)]  max-sm:text-xl max-sm:w-72 max-sm:m-2">HOW DOES IT WORK?</div>
+            <div style={paraStyle} className=" max-sm:text-xl max-sm:w-72 max-sm:m-2">
               Here are simple steps to start your journey with LTI
             </div>
             <Steps />

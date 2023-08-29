@@ -37,11 +37,11 @@ const Navbar = () => {
       name: "Course",
       icon: <FaBookReader />,
     },
-    {
-      path: '/Discussion',
-      name: "Profile",
-      icon: <FaUserAlt />,
-    },
+    // {
+    //   path: '/Discussion',
+    //   name: "Profile",
+    //   icon: <FaUserAlt />,
+    // },
     {
       path: '/about',
       name: "About",

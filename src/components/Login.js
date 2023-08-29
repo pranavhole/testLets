@@ -20,14 +20,18 @@ const Login = ({handleLogin}) => {
   const login = () => {
     const { email, password } = user;
     if (email && password) {
-      axios.post('http://localhost:4000/login', user)
+      axios.post('https://testlt.onrender.com/login', user)
         .then(res => {
           console.log(res.data)
           toast.success(res.data.message);
+          if(res.data.user){
           const User=res.data.user;
           handleLogin(User);
           console.log(res.data.user);
-          history("/")
+          history("/")}
+          else{
+            toast.success(res.data.message)
+          }
         }
         )
     }

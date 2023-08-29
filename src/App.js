@@ -19,9 +19,8 @@ function App() {
   const [user, setUser] = useState(null);
 
   useEffect(() => {
-    // Check if user data is stored in cookies
     const storedUser = Cookies.get('user');
-    if (storedUser) {
+    if (storedUser && storedUser!=undefined) {
       setUser(JSON.parse(storedUser));
     }
   }, []);
@@ -50,7 +49,7 @@ function App() {
           <Route path="Discussion" element={<DiscussionSection />} />
           <Route path="/reg" element={<RegistrationForm />} />
           <Route path='/tread' element={<StockChart />} />
-          <Route path="/login" element={<Login />} />
+          {/* <Route path="/login" element={<Login />} /> */}
         </Route>
       </Routes>
     </BrowserRouter>

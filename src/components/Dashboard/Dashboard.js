@@ -11,7 +11,7 @@ const Dashboard = ({ handleLogout, data }) => {
   const handleFileChange = (event) => {
     setSelectedFile(event.target.files[0]);
   };
-
+console.log(data);
   const handleUpload = () => {
     if (selectedFile) {
       const formData = new FormData();
@@ -38,7 +38,7 @@ const Dashboard = ({ handleLogout, data }) => {
     state:data.state,
     pincode:data.pincode,
     bio: 'I am a lifelong learner passionate about programming and technology.',
-    referralCode:data.refer,
+    referralCode:data.Myrefer,
     pastEarnings: [
       { month: 'Jan', amount: 100 },
       { month: 'Feb', amount: 200 },
