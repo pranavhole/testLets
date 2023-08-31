@@ -43,7 +43,7 @@ function App() {
       <Routes>
         <Route path="/" element={<HomeMain />} >
           <Route path="" element={<Home />} />
-          <Route path="dashboard" element={user && user._id ? <Dashboard data={user} handleLogout={handleLogout}/> : <Login handleLogin={handleData} />} />
+          <Route path="dashboard" element={user && user._id ? <Dashboard data={user} handleLogin={handleData} handleLogout={handleLogout}/> : <Login handleLogin={handleData} />} />
           <Route path="about" element={<About />} />
           <Route path="courses" element={<Courses data={user} />} />
           <Route path="/Mylearning" element={<MyCoursesPage />} />

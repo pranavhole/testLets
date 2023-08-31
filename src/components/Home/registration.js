@@ -6,7 +6,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import { useNavigate } from 'react-router-dom';
 import { useLocation } from 'react-router-dom';
 
-function App() {
+function App({handleLogin}) {
   const history = useNavigate();
   const searchParams = new URLSearchParams(window.location.search);
   const course = searchParams.get('course');
@@ -18,11 +18,11 @@ function App() {
       setRefer(storedRefer);
     }
   }, []);
-useEffect(()=>{
-  if(refer==="null"){
-    setRefer(null)
-  }
-})
+  useEffect(() => {
+    if (refer === "null") {
+      setRefer(null)
+    }
+  })
   const [user, setUser] = useState({
     name: "",
     email: "",
@@ -55,6 +55,23 @@ useEffect(()=>{
               toast('User already exists');
             } else {
               toast(res.data)
+              const { email, password } = user;
+              if (email && password) {
+                axios.post('https://testlt.onrender.com/login', user)
+                  .then(res => {
+                    console.log(res.data)
+                    toast.success(res.data.message);
+                    if (res.data.user) {
+                      const User = res.data.user;
+                      handleLogin(User);
+                      console.log(res.data.user);
+                    }
+                    else {
+                      toast.success(res.data.message)
+                    }
+                  }
+                  )
+              }
               const info = {
                 purpose: course,
                 amount: '5000',
@@ -69,8 +86,6 @@ useEffect(()=>{
                   console.log('payment_request', res.data);
                   // console.log(res)
                   window.location.href = res.data;
-
-
                 })
                 .catch((error) => console.log(error));
             }
