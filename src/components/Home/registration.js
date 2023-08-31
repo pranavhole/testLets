@@ -18,7 +18,11 @@ function App() {
       setRefer(storedRefer);
     }
   }, []);
-
+useEffect(()=>{
+  if(refer==="null"){
+    setRefer(null)
+  }
+})
   const [user, setUser] = useState({
     name: "",
     email: "",

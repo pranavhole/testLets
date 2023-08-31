@@ -6,12 +6,12 @@ const Dashboard = ({ handleLogout, data }) => {
   const [showEarningGraph, setShowEarningGraph] = useState(false);
   const [isCopied, setIsCopied] = useState(false);
   const [selectedFile, setSelectedFile] = useState(null);
-  
+
 
   const handleFileChange = (event) => {
     setSelectedFile(event.target.files[0]);
   };
-console.log(data);
+  console.log(data);
   const handleUpload = () => {
     if (selectedFile) {
       const formData = new FormData();
@@ -31,14 +31,14 @@ console.log(data);
   };
 
   const user = {
-    name:data.name,
-    email:data.email,
-    phone:data.phone,
-    city:data.city,
-    state:data.state,
-    pincode:data.pincode,
+    name: data.name,
+    email: data.email,
+    phone: data.phone,
+    city: data.city,
+    state: data.state,
+    pincode: data.pincode,
     bio: 'I am a lifelong learner passionate about programming and technology.',
-    referralCode:data.Myrefer,
+    referralCode: data.Myrefer,
     pastEarnings: [
       { month: 'Jan', amount: 100 },
       { month: 'Feb', amount: 200 },
@@ -58,11 +58,11 @@ console.log(data);
       setIsCopied(false);
     }, 2000);
   };
-  const Edit=()=>{
-    return(
-    <>
-    <div>hello</div>
-    </>
+  const Edit = () => {
+    return (
+      <>
+        <div>hello</div>
+      </>
     )
   }
 
@@ -71,11 +71,11 @@ console.log(data);
       <div className="relative py-3 sm:max-w-xl sm:mx-auto">
         <div className="relative w-full mx-auto px-4 py-10 bg-white shadow rounded-3xl sm:p-10">
           <div className='flex justify-end'>
-        <button className='relative  pt-3 ' >EDIT</button>
-        <button className='relative  pt-3 ' onClick={handleLogout}><img src={logoutImg} className=' h-6 bg-red-600'/></button>
-        </div>
+            <button className='relative  pt-3 ' >EDIT</button>
+            <button className='relative  pt-3 ' onClick={handleLogout}><img src={logoutImg} className=' h-6 bg-red-600' /></button>
+          </div>
           <div className="max-w-md mx-auto">
-          
+
             <div className="h-40 w-full relative mb-4">
               <img
                 className="rounded-t-3xl object-cover h-full w-full"
@@ -136,14 +136,19 @@ console.log(data);
                     )}
                   </button>
                 </h2>
-                <p
-                  className="text-gray-800 cursor-pointer"
-                  onClick={handleReferralCodeClick}
-                >
-                  http://localhost:3000/reg?refer={user.referralCode}
-                </p>
+                {user.referralCode ? (
+                  <p
+                    className="text-gray-800 cursor-pointer"
+                    onClick={handleReferralCodeClick}
+                  >
+                    https://letstreadindia.onrender.com/?refer={user.referralCode}
+                  </p>
+                ) : (
+                  <p> Buy The Course First</p>
+                )}
+
               </div>
-        
+
             </div>
           </div>
         </div>
