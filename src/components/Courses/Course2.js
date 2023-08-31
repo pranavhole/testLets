@@ -1,16 +1,16 @@
 import React, { useEffect } from 'react';
 import axios from 'axios';
-
+import { Link } from 'react-router-dom';
 
 export default function Course1(data) {
-  if(data.data.Payment==="SuccessFully" && data.data.courses==="Course2"){
-    return(
-      <>
-        <h1>You had purchesed this course</h1>
-      </>
-    )
-  }
   const handlePayment = async () => {
+    if(data.data.Payment==="SuccessFully" && data.data.courses==="Course1"){
+      return(
+        <>
+          <h1>You had purchesed this course</h1>
+        </>
+      )
+    }
     console.log(data.data.city);
       const info={
         purpose:'Course2',
@@ -44,7 +44,7 @@ export default function Course1(data) {
           <div className="py-4">
             <div style={containerStyles}>
               <img
-                src="http://localhost:3000/Images/image9.png"
+                src="/Images/image9.png"
                 alt="course1"
               />
             </div>
@@ -84,7 +84,7 @@ export default function Course1(data) {
         <div className="flex flex-col">
           <div className="flex flex-row flex-wrap p-3">
             <img
-              src="http://localhost:3000/Images/image10.png"
+              src="/Images/image10.png"
               className="w-10 h-10 mx-4 inline-block pt-1"
               alt="duration"
             ></img>
@@ -95,7 +95,7 @@ export default function Course1(data) {
 
           <div className="flex flex-row flex-wrap p-3">
             <img
-              src="http://localhost:3000/Images/image11.png"
+              src="/Images/image11.png"
               className="w-10 h-10 mx-4 inline-block pt-1"
               alt="duration"
             ></img>
@@ -106,7 +106,7 @@ export default function Course1(data) {
 
           <div className="flex flex-row flex-wrap p-3">
             <img
-              src="http://localhost:3000/Images/image12.png"
+              src="/Images/image12.png"
               className="w-10 h-10 mx-4 inline-block pt-1"
               alt="duration"
             ></img>
@@ -117,9 +117,9 @@ export default function Course1(data) {
           </div>
 
           <div className="flex flex-row flex-wrap p-3 pt-6">
-            <button className="bg-[#327E36] hover:bg-[#1E2A55] text-white font-bold py-2 px-4 border-b-4 border-[#327E36] hover:border-[#1E2A55] rounded-xl" onClick={handlePayment}>
+          <Link to="/reg?course=course2" className="bg-[#327E36] hover:bg-[#1E2A55] text-white font-bold py-2 px-4 border-b-4 border-[#327E36] hover:border-[#1E2A55] rounded-xl">
               Buy Now
-            </button>
+            </Link>
           </div>
         </div>
       </div>

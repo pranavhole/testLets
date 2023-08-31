@@ -27,26 +27,26 @@ const Navbar = () => {
       name: "Home",
       icon: <FaHome />,
     },
-    {
-      path: '/MyLearning',
-      name: "MY Learning",
-      icon: <FaBookmark />,
-    },
-    {
-      path: '/courses',
-      name: "Course",
-      icon: <FaBookReader />,
-    },
     // {
-    //   path: '/Discussion',
-    //   name: "Profile",
-    //   icon: <FaUserAlt />,
+    //   path: '/MyLearning',
+    //   name: "MY Learning",
+    //   icon: <FaBookmark />,
     // },
-    {
-      path: '/about',
-      name: "About",
-      icon: <FaInfoCircle />,
-    },
+    // {
+    //   path: '/courses',
+    //   name: "Course",
+    //   icon: <FaBookReader />,
+    // },
+    // // {
+    // //   path: '/Discussion',
+    // //   name: "Profile",
+    // //   icon: <FaUserAlt />,
+    // // },
+    // {
+    //   path: '/about',
+    //   name: "About",
+    //   icon: <FaInfoCircle />,
+    // },
   ]
 
   return (

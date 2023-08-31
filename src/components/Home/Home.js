@@ -9,7 +9,9 @@ import Steps from "./steps";
 // import { Fade } from "react-reveal";
 import img1 from "./image-1.jpg";
 import img2 from "./image-2.jpg";
+import { useEffect,useState } from "react";
 import img3 from "./image-3.png";
+import { useSearchParams } from 'react-router-dom';
 
 function createCard(coursep) {
   return (
@@ -35,6 +37,15 @@ function createCard(coursep) {
 // }
 
 function Home() {
+  const [searchParams] = useSearchParams();
+  const [item, setItem] = useState([]);
+
+  useEffect(() => {
+    localStorage.setItem('refer',(searchParams.get('refer'))); 
+  }, [searchParams]);
+  console.log(item);
+
+
   const slides = [
     { url: img1, title: "beach" },
     { url: img2, title: "boat" },
@@ -68,13 +79,13 @@ return(
           </div>
 
           <div className=" flex flex-col justify-center items-center">
-          <div style={titleStyles} className="m-8 h-auto rounded-none text-center font-mulish text-4xl font-bold leading-tight tracking-normal text-[rgba(45, 85, 47, 1)]  max-sm:text-xl max-sm:w-72 max-sm:m-2">We offer the following Stock Trading Courses</div>
+          <div style={titleStyles} className="mt-8 h-auto rounded-none text-center font-mulish text-4xl font-bold leading-tight tracking-normal text-[rgba(45, 85, 47, 1)]  max-sm:text-xl max-sm:w-72 max-sm:m-2">We offer the following Stock Trading Courses</div>
             <dl className="justify-center dictionary flex">
               {CourseCard.map(createCard)}
             </dl>
           </div>
 
-          <div className="flex flex-col items-center text-center">
+          {/* <div className="flex flex-col items-center text-center">
             <div  style={titleStyles} className="m-8 h-auto rounded-none font-mulish text-4xl font-bold leading-tight tracking-normal text-[rgba(45, 85, 47, 1)] max-sm:text-xl max-sm:w-72 max-sm:m-2">WHY YOU SHOULD JOIN LET'S TRADE INDIA?</div>
             <Middle />
           </div>
@@ -85,7 +96,7 @@ return(
               Here are simple steps to start your journey with LTI
             </div>
             <Steps />
-          </div>
+          </div> */}
         </div>
       </div>
     </>

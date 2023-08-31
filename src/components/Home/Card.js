@@ -4,7 +4,7 @@ function Card(props) {
   return (
     <div className="term">
       <div className="top">
-        <img className="square-img" src={props.img} alt="avatar_img" />
+        <img className="square-img w-48" src={props.img} alt="avatar_img" />
         <div className="title">{props.title}</div>
       </div>
       <div className="middle">

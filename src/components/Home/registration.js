@@ -1,14 +1,24 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import axios from 'axios';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useNavigate } from 'react-router-dom';
 import { useLocation } from 'react-router-dom';
-import { useSearchParams } from 'react-router-dom';
+
 function App() {
   const history = useNavigate();
-  const [searchParams] = useSearchParams();
-  const refer = searchParams.get('refer');
+  const searchParams = new URLSearchParams(window.location.search);
+  const course = searchParams.get('course');
+  const [refer, setRefer] = useState();
+
+  useEffect(() => {
+    const storedRefer = localStorage.getItem('refer');
+    if (storedRefer) {
+      setRefer(storedRefer);
+    }
+  }, []);
+
   const [user, setUser] = useState({
     name: "",
     email: "",
@@ -40,8 +50,25 @@ function App() {
             if (res.data === 'User already exists') {
               toast('User already exists');
             } else {
-              toast(res.data);
-              history('/');
+              toast(res.data)
+              const info = {
+                purpose: course,
+                amount: '5000',
+                buyer_name: user.name,
+                email: user.email,
+                phone: user.phone,
+                redirect_url: `https://testlt.onrender.com/payment/callback?user_id=${res.data._id}`,
+                webhooks_url: '/webhook/'
+              };
+              axios.post('https://testlt.onrender.com/payment', info)
+                .then(res => {
+                  console.log('payment_request', res.data);
+                  // console.log(res)
+                  window.location.href = res.data;
+
+
+                })
+                .catch((error) => console.log(error));
             }
           })
           .catch(error => {
@@ -52,7 +79,6 @@ function App() {
       toast('Only Gmail addresses are allowed');
     }
   };
-
   return (
 
     <div className="container mx-auto px-4 py-8">
@@ -122,12 +148,12 @@ function App() {
         onChange={handleChange}
         className="w-full px-4 py-2 mb-4 rounded border border-gray-300 focus:outline-none focus:border-blue-500"
       />
-         {refer ? (
+      {refer ? (
         <input
           type="text"
           name="referralCode"
           placeholder="Referral Code"
-          value={user.referralCode}
+          value={refer}
           readOnly // Prevent editing if referral code is preset
           className="w-full px-4 py-2 mb-4 rounded border border-gray-300 focus:outline-none focus:border-blue-500"
         />
@@ -141,7 +167,7 @@ function App() {
           className="w-full px-4 py-2 mb-4 rounded border border-gray-300 focus:outline-none focus:border-blue-500"
         />
       )}
-      
+
       <button
         onClick={register}
         className="w-full px-4 py-2 rounded bg-blue-500 text-white font-semibold hover:bg-blue-600"
