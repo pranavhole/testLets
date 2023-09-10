@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 
-export default function Course1(data) {
+export default function Course2(data) {
   const handlePayment = async () => {
     if(data.data.Payment==="SuccessFully" && data.data.courses==="Course1"){
       return(
@@ -13,8 +13,8 @@ export default function Course1(data) {
     }
     console.log(data.data.city);
       const info={
-        purpose:'Course2',
-        amount:'5000',
+        purpose:'Future & Options',
+        amount:'2999',
         buyer_name:data.data.name,
         email:data.data.email,
         phone:data.data.phone,
@@ -39,38 +39,6 @@ export default function Course1(data) {
  
   return (
     <>
-      <div className="relative inline-flex w-full justify-evenly ">
-        <div className=" flex flex-col justify-center space-y-4">
-          <div className="py-4">
-            <div style={containerStyles}>
-              <img
-                src="/Images/image9.png"
-                alt="course1"
-              />
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div className="flex flex-col justify-center items-center">
-        <div className="flex flex-col  justify-center items-center">
-          <div className="text-xl w-5/6">
-            <p className="py-4 text-center">
-              This course is designed for those who want to become a full-time
-              trader and earn money by regular trading in the stock market.
-            </p>
-            <p className="py-4 text-center">
-              The course includes pure technical analysis with sector
-              correlation, position size, risk management, wholesale/retail
-              price, demand & supply, in-depth analysis on chart, advanced day
-              trading strategy, how to read live price action, gaps, indicators,
-              market traps, advanced stock scanning techniques, trading
-              psychology, advanced trend analysis and much more. Specially
-              designed for those who want to make a career in the stock market.
-            </p>
-          </div>
-        </div>
-      </div>
 
       <div className="flex justify-around pb-4 py-8 pt-20">
         <div class="flex items-center pl-24">
@@ -112,12 +80,12 @@ export default function Course1(data) {
             ></img>
             <div className="text-xl font-medium pt-2 text-[#000000]">
               Total Charges :{" "}
-              <span className="px-10 text-[#216825] font-medium">₹ 15,000</span>{" "}
+              <span className="px-10 text-[#216825] font-medium">₹ 2,999</span>{" "}
             </div>
           </div>
 
           <div className="flex flex-row flex-wrap p-3 pt-6">
-          <Link to="/reg?course=course2" className="bg-[#327E36] hover:bg-[#1E2A55] text-white font-bold py-2 px-4 border-b-4 border-[#327E36] hover:border-[#1E2A55] rounded-xl">
+          <Link to="/reg?course=Future&Options" className="bg-[#327E36] hover:bg-[#1E2A55] text-white font-bold py-2 px-4 border-b-4 border-[#327E36] hover:border-[#1E2A55] rounded-xl">
               Buy Now
             </Link>
           </div>

@@ -1,17 +1,13 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import ImageSlider from "./ImageSlider";
 import Card from "./Card";
-import CourseCard from "./courseCard"
+import CourseCard from "./courseCard";
 import Middle from "./middle";
 import Steps from "./steps";
-// import Feedback from "./feedback";
-// import customerFeedback from "./customerFeedback";
-// import { Fade } from "react-reveal";
 import img1 from "./image-1.jpg";
 import img2 from "./image-2.jpg";
-import { useEffect,useState } from "react";
 import img3 from "./image-3.png";
-import { useSearchParams } from 'react-router-dom';
+import { useSearchParams } from "react-router-dom";
 
 function createCard(coursep) {
   return (
@@ -25,26 +21,33 @@ function createCard(coursep) {
   );
 }
 
-// function custFeedback(custf) {
-//   return (
-//     <Feedback
-//       name={custf.name}
-//       star={custf.star}
-//       profile={custf.profile}
-//       content={custf.content}
-//     />
-//   );
-// }
-
 function Home() {
+  useEffect(() => {
+    const sectionId = "section1";
+    const targetElement = document.getElementById(sectionId);
+    if (targetElement) {
+      targetElement.scrollIntoView({ behavior: "smooth" });
+    }
+    const scrollToSection = () => {
+      if (targetElement) {
+        targetElement.scrollIntoView({ behavior: "smooth" });
+      }
+    };
+
+    window.onload = scrollToSection; // Attach the function to the window.onload event
+
+  return () => {
+    window.onload = null; // Clean up the event listener when the component unmounts
+  };
+    // console.log(targetElement)
+  }, []);
+
   const [searchParams] = useSearchParams();
   const [item, setItem] = useState([]);
 
   useEffect(() => {
-    localStorage.setItem('refer',(searchParams.get('refer'))); 
+    localStorage.setItem("refer", searchParams.get("refer"));
   }, [searchParams]);
-  console.log(item);
-
 
   const slides = [
     { url: img1, title: "beach" },
@@ -53,8 +56,6 @@ function Home() {
   ];
 
   const containerStyles = {
-    // width: "90vw",
-    // height: "80vh",
     margin: "0 auto",
   };
 
@@ -70,29 +71,48 @@ function Home() {
     fontSize: "20px",
     lineHeight: "31px",
   };
-return(
-  <>
+
+  return (
+    <>
       <div className="flex flex-wrap justify-evenly">
         <div className="flex flex-col justify-center space-y-4 py-8 max-sm:p-0">
-          <div style={containerStyles} className="w-[90vw] h-[80vh] max-sm:w-[100vw]">
+          <div
+            style={containerStyles}
+            className="w-[90vw] h-[80vh] max-sm:w-[100vw]"
+          >
             <ImageSlider slides={slides} />
           </div>
 
-          <div className=" flex flex-col justify-center items-center">
-          <div style={titleStyles} className="mt-8 h-auto rounded-none text-center font-mulish text-4xl font-bold leading-tight tracking-normal text-[rgba(45, 85, 47, 1)]  max-sm:text-xl max-sm:w-72 max-sm:m-2">We offer the following Stock Trading Courses</div>
+          <div className="flex flex-col justify-center items-center sel" id="section1">
+            <div
+              style={titleStyles}
+              className="mt-8 h-auto rounded-none text-center font-mulish text-4xl font-bold leading-tight tracking-normal text-[rgba(45, 85, 47, 1)]  max-sm:text-xl max-sm:w-72 max-sm:m-2"
+            >
+              We offer the following Stock Trading Courses
+            </div>
             <dl className="justify-center dictionary flex">
               {CourseCard.map(createCard)}
             </dl>
           </div>
 
           {/* <div className="flex flex-col items-center text-center">
-            <div  style={titleStyles} className="m-8 h-auto rounded-none font-mulish text-4xl font-bold leading-tight tracking-normal text-[rgba(45, 85, 47, 1)] max-sm:text-xl max-sm:w-72 max-sm:m-2">WHY YOU SHOULD JOIN LET'S TRADE INDIA?</div>
+            <div
+              style={titleStyles}
+              className="m-8 h-auto rounded-none font-mulish text-4xl font-bold leading-tight tracking-normal text-[rgba(45, 85, 47, 1)] max-sm:text-xl max-sm:w-72 max-sm:m-2"
+            >
+              WHY YOU SHOULD JOIN LET'S TRADE INDIA?
+            </div>
             <Middle />
           </div>
 
           <div className="flex flex-col items-center text-center m-4">
-            <div style={titleStyles} className="m-8 h-auto rounded-none font-mulish text-4xl font-bold leading-tight tracking-normal text-[rgba(45, 85, 47, 1)]  max-sm:text-xl max-sm:w-72 max-sm:m-2">HOW DOES IT WORK?</div>
-            <div style={paraStyle} className=" max-sm:text-xl max-sm:w-72 max-sm:m-2">
+            <div
+              style={titleStyles}
+              className="m-8 h-auto rounded-none font-mulish text-4xl font-bold leading-tight tracking-normal text-[rgba(45, 85, 47, 1)]  max-sm:text-xl max-sm:w-72 max-sm:m-2"
+            >
+              HOW DOES IT WORK?
+            </div>
+            <div style={paraStyle} className="max-sm:text-xl max-sm:w-72 max-sm:m-2">
               Here are simple steps to start your journey with LTI
             </div>
             <Steps />

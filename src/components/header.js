@@ -24,6 +24,15 @@ const Header = () => {
     else if(location.pathname==='/courses'){
       return 'Course';
     }
+    else if(location.pathname==='/course1'){
+      return 'I F'
+    } 
+    else if(location.pathname==='/course2'){
+      return 'F & O'
+    }
+    else if(location.pathname==='/course3'){
+      return 'Combo'
+    }
     else{
       return '404';
     }
