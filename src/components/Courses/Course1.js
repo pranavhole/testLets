@@ -1,16 +1,7 @@
-import React, { useEffect } from 'react';
+import React  from 'react';
 import { Link } from 'react-router-dom';
 
 export default function Course1(data) {
-  useEffect(() => {
-    if(data.data.Payment==="SuccessFully" && data.data.courses==="InstitutionFootprints"){
-      return(
-        <>
-          <h1>You had purchesed this course</h1>
-        </>
-      )
-    }
-  });
  
   return (
     <>
