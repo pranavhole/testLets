@@ -15,7 +15,6 @@ function LoginReg({ handleLogin }) {
     const course = searchParams.get('course');
     const [refer, setRefer] = useState();
     const [loading, setLoading] = useState(false);
-    // const [process,setProcess]=useState(false);
 
     useEffect(() => {
         const storedRefer = localStorage.getItem('refer');
@@ -23,9 +22,13 @@ function LoginReg({ handleLogin }) {
             setRefer(storedRefer);
         }
     }, []);
+    useEffect(() => {
+        if (refer === "null") {
+            setRefer(null)
+        }
+    })
     const login = async (e) => {
         e.preventDefault();
-        setLoading(true);
         console.log("running");
         const user = {
             "email": email,
@@ -83,7 +86,6 @@ function LoginReg({ handleLogin }) {
         } else {
             toast.error("Password or Email Is incorrect");
         }
-        setLoading(false);
     }
 
     const register = async (e) => {
@@ -200,20 +202,7 @@ function LoginReg({ handleLogin }) {
                         <Components.Input type='email' placeholder='Email' value={email} onChange={(e) => setEmail(e.target.value)} />
                         <Components.Input type='password' placeholder='Password' value={password} onChange={(e) => setPassword(e.target.value)} />
                         <Components.Anchor href='#'>Forgot your password?</Components.Anchor>
-                        {loading ? ( // Conditionally render a loading screen
-                            <Components.Button
-                                onClick={console.log("wait")}
-                            >
-                                Loading ...
-
-                            </Components.Button>
-                        ) : (
-                            <Components.Button
-                                onClick={login}
-                            >
-                                Sign In
-
-                            </Components.Button>)}
+                        <Components.Button onClick={login} >Sign In</Components.Button>
                     </Components.Form>
                 </Components.SignInContainer>
 
