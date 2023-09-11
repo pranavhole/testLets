@@ -1,14 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState} from 'react';
 import { ReactComponent as CopyIcon } from './copy-icon.svg'; // Replace with your copy icon SVG
-import axios from 'axios';
 import logoutImg from './logout.svg'
 import EditForm from './EditUser';
-import { ToastContainer, toast } from 'react-toastify';
+import { ToastContainer } from 'react-toastify';
 
 const Dashboard = ({ handleLogout, data }) => {
-  const [showEarningGraph, setShowEarningGraph] = useState(false);
   const [isCopied, setIsCopied] = useState(false);
-  const [selectedFile, setSelectedFile] = useState(null);
   const [isEditing, setIsEditing] = useState(false);
   const user = {
     name: data.name,
@@ -31,20 +28,13 @@ const Dashboard = ({ handleLogout, data }) => {
  
 
   const handleCopyReferralCode = () => {
-    let text = 'https://tt-i9w7.onrender.com/reg?refer=' + user.referralCode
+    let text = 'https://tt-i9w7.onrender.com/?refer=' + user.referralCode
     navigator.clipboard.writeText(text);
     setIsCopied(true);
     setTimeout(() => {
       setIsCopied(false);
     }, 2000);
   };
-  const Edit = () => {
-    return (
-      <>
-        <div>hello</div>
-      </>
-    )
-  }
 
   return (
     <div className="min-h-screen bg-gray-100 py-6 flex flex-col justify-center sm:py-12">

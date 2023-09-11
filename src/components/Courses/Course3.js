@@ -1,13 +1,7 @@
-import React from 'react';
+import React,{useEffect} from 'react';
 import { Link } from 'react-router-dom';
 
 export default function Course3(data) {
-  
-  const containerStyles = {
-    width: "950px",
-    height: "300px",
-    margin: "0 auto",
-  };
  
   return (
     <>

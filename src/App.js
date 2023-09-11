@@ -12,7 +12,7 @@ import Course2 from "./components/Courses/Course2";
 import Course3 from "./components/Courses/Course3";
 // import RegistrationForm from "./components/Home/registration";
 import MyCoursesPage from "./components/myLearning/MyLearning"
-import Login from "./components/Login";
+// import Login from "./components/Login";
 import StockChart from "./components/myLearning/Treadcanvas/Treadcanvas";
 import DiscussionSection from "./components/discussion/discussion";
 import LoginReg from "./components/loginReg/loginReg"
@@ -23,7 +23,7 @@ function App() {
  const [cookie,setCookie]=useState(null);
   useEffect(() => {
     const storedUser = Cookies.get('user');
-    if (storedUser && storedUser!=undefined) {
+    if (storedUser && storedUser!==undefined) {
       setUser(JSON.parse(storedUser));
     }
   }, [cookie]);

@@ -5,10 +5,10 @@ import {
   FaTh,
   FaHome,
   FaBars,
-  FaUserAlt,
-  FaBookmark,
-  FaBookReader,
-  FaInfoCircle
+  // FaUserAlt,
+  // FaBookmark,
+  // FaBookReader,
+  // FaInfoCircle
 } from "react-icons/fa"
 const Navbar = () => {
   const [isVisible, setIsVisible] = useState(false);

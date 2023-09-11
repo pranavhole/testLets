@@ -1,5 +1,4 @@
 import React from "react";
-import { Fade } from "react-reveal";
 import Stock from "../../svgs/stock";
 import Stock2 from "../../svgs/stock2";
 import Stock3 from "../../svgs/stock3";

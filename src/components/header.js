@@ -2,7 +2,6 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import logo from '../images/logo.png'
 import { useLocation } from 'react-router-dom'
-import Home from './Home/Home'
 
 const Header = () => {
   const location = useLocation();

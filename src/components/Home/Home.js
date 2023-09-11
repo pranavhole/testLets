@@ -1,9 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import ImageSlider from "./ImageSlider";
 import Card from "./Card";
 import CourseCard from "./courseCard";
-import Middle from "./middle";
-import Steps from "./steps";
 import img1 from "./image-1.jpg";
 import img2 from "./image-2.jpg";
 import img3 from "./image-3.png";
@@ -43,7 +41,6 @@ function Home() {
   }, []);
 
   const [searchParams] = useSearchParams();
-  const [item, setItem] = useState([]);
 
   useEffect(() => {
     localStorage.setItem("refer", searchParams.get("refer"));
@@ -63,14 +60,6 @@ function Home() {
     color: "rgba(45, 85, 47, 1)",
   };
 
-  const paraStyle = {
-    color: "#3A3A3A",
-    fontWeight: "700",
-    fontFamily: "Mulish",
-    fontStyle: "normal",
-    fontSize: "20px",
-    lineHeight: "31px",
-  };
 
   return (
     <>

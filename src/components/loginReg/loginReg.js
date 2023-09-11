@@ -22,11 +22,6 @@ function LoginReg({ handleLogin }) {
             setRefer(storedRefer);
         }
     }, []);
-    useEffect(() => {
-        if (refer === "null") {
-            setRefer(null)
-        }
-    })
     const login = async (e) => {
         e.preventDefault();
         console.log("running");

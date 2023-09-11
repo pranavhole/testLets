@@ -45,24 +45,6 @@ const Login = ({handleLogin}) => {
   };
 
 
-  const titleStyles = {
-    height: "65px",
-    left: "453px",
-    top: "2710px",
-    borderRadius: "nullpx",
-    fontSize: "40px",
-    fontWeight: "700",
-    lineHeight: "65px",
-    letterSpacing: "0em",
-    fontFamily: 'Segoe UI',
-    backgroundSize: "400%",
-    backgroundClip: "text",
-    webkitBackgroundClip: "text",
-    color: "rgba(45, 85, 47, 1)",
-    color: "rgb(224, 79, 99)",
-    backgroundImage: "linear-gradient(-45deg,rgb(224, 79, 99), rgb(23, 26, 226))",
-    animation: "animasi 3s linear infinite",
-  };
   return (
     <>
       <div style={imageStyles}>
@@ -79,7 +61,7 @@ const Login = ({handleLogin}) => {
                   <img
                     src={image}
                     className="box2 rounded-2xl w-5/6"
-                    alt=""
+                    alt="ddd"
                   />
                 </div>
 

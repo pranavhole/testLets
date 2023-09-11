@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export default function Footer() {
   return (
@@ -16,18 +17,18 @@ export default function Footer() {
             <div className="mb-5 ml-10">
               <h4 className="font-bold text-white text-xl pb-2"> Menu </h4>
               <ul>
-                <li className="pb-2"><a href="#" className="hover:text-blue-800">Home</a> </li>
-                <li className="pb-2"><a href="#" className="hover:text-blue-800">Courses</a> </li>
-                <li className="pb-2"><a href="#" className="hover:text-blue-800">My Learning</a> </li>
-                <li className="pb-2"><a href="#" className="hover:text-blue-800">Profile</a></li>
+                <li className="pb-2"><Link to="#" className="hover:text-blue-800">Courses</Link> </li>
+                <li className="pb-2"><Link to="#" className="hover:text-blue-800">Home</Link> </li>
+                <li className="pb-2"><Link to="#" className="hover:text-blue-800">My Learning</Link> </li>
+                <li className="pb-2"><Link to="#" className="hover:text-blue-800">Profile</Link></li>
               </ul>
             </div>
             <div className="mb-5 ">
               <h4 className="font-bold text-white text-xl pb-2"> Company </h4>
               <ul>
-                <li className="pb-2"><a href="#" className="hover:text-blue-800">About Us</a> </li>
-                <li className="pb-2"><a href="#" className="hover:text-blue-800">Terms of Services</a> </li>
-                <li className="pb-2"><a href="#" className="hover:text-blue-800">Privacy Policy</a> </li>
+                <li className="pb-2"><Link to="#" className="hover:text-blue-800">About Us</Link> </li>
+                <li className="pb-2"><Link to="#" className="hover:text-blue-800">Terms of Services</Link> </li>
+                <li className="pb-2"><Link to="#" className="hover:text-blue-800">Privacy Policy</Link> </li>
               </ul>
             </div>
             <div className="mb-5 ">
@@ -38,10 +39,10 @@ export default function Footer() {
               </form>
              <div className="py-4 flex flex-row flex-wrap">
               <div className="text-xl font-bold pt-2">Follow Us On: </div>
-              <a href="#" className="w-10 h-10 mx-1 inline-block pt-1"><img src="http://localhost:3000/Images/twitter.png"></img></a>
-              <a href="#" className="w-10 h-10 mx-1 inline-block pt-1"><img src="http://localhost:3000/Images/linkedIn.png"></img></a>
-              <a href="#" className="w-10 h-10 mx-1 inline-block pt-1"><img src="http://localhost:3000/Images/Insta.png"></img></a>
-              <a href="#" className="w-10 h-10 mx-1 inline-block pt-1"><img src="http://localhost:3000/Images/YT.png"></img></a>
+              <Link to="#" className="w-10 h-10 mx-1 inline-block pt-1"><img src="http://localhost:3000/Images/twitter.png" alt="kk"></img></Link>
+              <Link to="#" className="w-10 h-10 mx-1 inline-block pt-1"><img src="http://localhost:3000/Images/linkedIn.png" alt="kk"></img></Link>
+              <Link to="#" className="w-10 h-10 mx-1 inline-block pt-1"><img src="http://localhost:3000/Images/Insta.png" alt="kk"></img></Link>
+              <Link to="#" className="w-10 h-10 mx-1 inline-block pt-1"><img src="http://localhost:3000/Images/YT.png" alt="kk"></img></Link>
              </div>
             </div>
           </div>

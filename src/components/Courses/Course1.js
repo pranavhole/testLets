@@ -1,41 +1,16 @@
 import React, { useEffect } from 'react';
-import axios from 'axios';
 import { Link } from 'react-router-dom';
 
 export default function Course1(data) {
-  const handlePayment = async () => {
-    if(data.data.Payment==="SuccessFully" && data.data.courses==="Course1"){
+  useEffect(() => {
+    if(data.data.Payment==="SuccessFully" && data.data.courses==="InstitutionFootprints"){
       return(
         <>
           <h1>You had purchesed this course</h1>
         </>
       )
     }
-    console.log(data.data.city);
-      const info={
-        purpose:'Future & Options',
-        amount:'2999',
-        buyer_name:data.data.name,
-        email:data.data.email,
-        phone:data.data.phone,
-        redirect_url:`https://testlt.onrender.com/payment/callback?user_id=${data.data._id}`,
-        webhooks_url:'/webhook/'
-      };
-      axios.post('https://testlt.onrender.com/payment',info)
-      .then(res=>{
-        console.log('payment_request', res.data);
-        // console.log(res)
-        window.location.href= res.data;
-
-
-      })
-      .catch((error)=>console.log(error));
-  };
-  const containerStyles = {
-    width: "950px",
-    height: "300px",
-    margin: "0 auto",
-  };
+  });
  
   return (
     <>
