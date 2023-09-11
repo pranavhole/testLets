@@ -15,6 +15,7 @@ function LoginReg({ handleLogin }) {
     const course = searchParams.get('course');
     const [refer, setRefer] = useState();
     const [loading, setLoading] = useState(false);
+    // const [process,setProcess]=useState(false);
 
     useEffect(() => {
         const storedRefer = localStorage.getItem('refer');
@@ -24,6 +25,7 @@ function LoginReg({ handleLogin }) {
     }, []);
     const login = async (e) => {
         e.preventDefault();
+        setLoading(true);
         console.log("running");
         const user = {
             "email": email,
@@ -42,7 +44,7 @@ function LoginReg({ handleLogin }) {
                     }, 4000);
                     if (course) {
                         let amount;
-                        if (course === "Future&Options") {
+                        if (course === "Future") {
                             amount = 2999;
                         }
                         if (course === "InstitutionFootprints") {
@@ -81,6 +83,7 @@ function LoginReg({ handleLogin }) {
         } else {
             toast.error("Password or Email Is incorrect");
         }
+        setLoading(false);
     }
 
     const register = async (e) => {
@@ -113,7 +116,7 @@ function LoginReg({ handleLogin }) {
                                     handleLogin(User);
                                     if (course) {
                                         let amount;
-                                        if (course === "Future&Options") {
+                                        if (course === "Future") {
                                             amount = 2999;
                                         }
                                         if (course === "InstitutionFootprints") {
@@ -197,7 +200,20 @@ function LoginReg({ handleLogin }) {
                         <Components.Input type='email' placeholder='Email' value={email} onChange={(e) => setEmail(e.target.value)} />
                         <Components.Input type='password' placeholder='Password' value={password} onChange={(e) => setPassword(e.target.value)} />
                         <Components.Anchor href='#'>Forgot your password?</Components.Anchor>
-                        <Components.Button onClick={login} >Sign In</Components.Button>
+                        {loading ? ( // Conditionally render a loading screen
+                            <Components.Button
+                                onClick={console.log("wait")}
+                            >
+                                Loading ...
+
+                            </Components.Button>
+                        ) : (
+                            <Components.Button
+                                onClick={login}
+                            >
+                                Sign In
+
+                            </Components.Button>)}
                     </Components.Form>
                 </Components.SignInContainer>
 
