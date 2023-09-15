@@ -1,12 +1,24 @@
-import React from 'react';
+import React , {useEffect} from 'react';
 import { Link } from 'react-router-dom';
 
 export default function Course2(data) {
- 
+  useEffect(() => {
+    const sectionId = "section1";
+    const targetElement = document.getElementById(sectionId);
+    if (targetElement) {
+      targetElement.scrollIntoView({ behavior: "smooth" });
+    }
+    const scrollToSection = () => {
+      if (targetElement) {
+        targetElement.scrollIntoView({ behavior: "smooth" });
+      }
+    };
+
+    window.onload = scrollToSection; 
+  }, []);
   return (
     <>
-
-      <div className="flex justify-around pb-4 py-8 pt-20">
+      <div className="flex justify-around pb-4 py-8 pt-20 section1">
         <div class="flex items-center pl-24">
           <img
             src={process.env.PUBLIC_URL + "/Images/image8.png"}

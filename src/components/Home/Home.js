@@ -20,7 +20,14 @@ function createCard(coursep) {
 }
 
 function Home() {
+  const [searchParams] = useSearchParams();
   useEffect(() => {
+    localStorage.setItem("refer", searchParams.get("refer"));
+    console.log(searchParams);
+  }, [searchParams]);
+
+  useEffect(() => {
+    if(searchParams.size){
     const sectionId = "section1";
     const targetElement = document.getElementById(sectionId);
     if (targetElement) {
@@ -32,19 +39,16 @@ function Home() {
       }
     };
 
-    window.onload = scrollToSection; // Attach the function to the window.onload event
+    window.onload = scrollToSection;
 
   return () => {
-    window.onload = null; // Clean up the event listener when the component unmounts
+    window.onload = null; }
   };
-    // console.log(targetElement)
-  }, []);
 
-  const [searchParams] = useSearchParams();
-
-  useEffect(() => {
-    localStorage.setItem("refer", searchParams.get("refer"));
   }, [searchParams]);
+
+  
+
 
   const slides = [
     { url: img1, title: "beach" },
