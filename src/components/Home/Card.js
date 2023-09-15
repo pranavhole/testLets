@@ -9,8 +9,8 @@ function Card(props) {
       </div>
       <div className="middle">
         <p className="price">{props.price}</p>
-        <p className="offer">{props.offer}</p>
-        <Link to={props.courseUrl}className="seeMore">See More +</Link>
+        {/* <p className="offer">{props.offer}</p> */}
+        {/* <Link to={props.courseUrl}className="seeMore">See More +</Link> */}
       </div>
       <div className="bottom">
       <Link to={props.courseUrl}>Subscribe Now</Link>
