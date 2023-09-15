@@ -5,6 +5,7 @@ import CourseCard from "./courseCard";
 import img1 from "./image-1.jpg";
 import img2 from "./image-2.jpg";
 import img3 from "./image-3.png";
+import img4 from "./image-4.jpg";
 import { useSearchParams } from "react-router-dom";
 
 function createCard(coursep) {
@@ -51,6 +52,7 @@ function Home() {
 
 
   const slides = [
+    { url: img4, title: "logo" },
     { url: img1, title: "beach" },
     { url: img2, title: "boat" },
     { url: img3, title: "forest" },
@@ -61,7 +63,7 @@ function Home() {
   };
 
   const titleStyles = {
-    color: "rgba(45, 85, 47, 1)",
+    color: "#000",
   };
 
 
@@ -79,7 +81,7 @@ function Home() {
           <div className="flex flex-col justify-center items-center sel" id="section1">
             <div
               style={titleStyles}
-              className="mt-8 h-auto rounded-none text-center font-mulish text-4xl font-bold leading-tight tracking-normal text-[rgba(45, 85, 47, 1)]  max-sm:text-xl max-sm:w-72 max-sm:m-2"
+              className="mt-8 h-auto rounded-none text-center font-mulish text-4xl font-bold leading-tight tracking-normal text-[#000]  max-sm:text-xl max-sm:w-72 max-sm:m-2"
             >
               We offer the following Stock Trading Courses
             </div>
