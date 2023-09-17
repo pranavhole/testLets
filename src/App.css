@@ -14,9 +14,11 @@ body {
   margin: 4rem auto;
   max-width: 90%;
 }
-.fabbut{
-  display:none;
+
+.fabbut {
+  display: none;
 }
+
 .gradient-custom {
   /* fallback for old browsers */
   background: #f6d365;
@@ -27,6 +29,7 @@ body {
   /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   background: linear-gradient(to right bottom, rgba(246, 211, 101, 1), rgba(253, 160, 133, 1))
 }
+
 .dictionary>.term {
   text-align: center;
   max-width: 20rem;
@@ -39,21 +42,26 @@ body {
 
 }
 
-.term{
-  background: #ECE9E6;  /* fallback for old browsers */
-background: -webkit-linear-gradient(to right, #FFFFFF, #ECE9E6);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to right, #FFFFFF, #ECE9E6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+.term {
+  background: #ECE9E6;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #FFFFFF, #ECE9E6);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #FFFFFF, #ECE9E6);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
 
   box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.05), 0 20px 50px 0 rgba(0, 0, 0, 0.1);
-transition: 0.15s ease-in;
+  transition: 0.15s ease-in;
 
-/* Hover and focus state */
-&:hover, &:focus-within {
-  box-shadow: 0 0 0 2px #1E2A55, 0 10px 60px 0 rgba(0, 0, 0, 0.1);
-  transform: translateY(-5px);
+  /* Hover and focus state */
+  &:hover,
+  &:focus-within {
+    box-shadow: 0 0 0 2px #1E2A55, 0 10px 60px 0 rgba(0, 0, 0, 0.1);
+    transform: translateY(-5px);
+  }
 }
-}
+
 .top .title {
   font-family: 'Arimo';
   font-style: normal;
@@ -94,7 +102,7 @@ transition: 0.15s ease-in;
   border-radius: 10px;
   height: 50px;
   width: 100%;
-  background-color: #1E2A55 ;
+  background-color: #1E2A55;
   position: relative;
   bottom: 0;
   display: flex;
@@ -107,7 +115,8 @@ transition: 0.15s ease-in;
   font-size: 28px;
   line-height: 39px;
 }
-.mob{
+
+.mob {
   display: flex;
   position: absolute;
   background: blue;
@@ -120,6 +129,7 @@ transition: 0.15s ease-in;
   align-items: center;
   justify-content: space-around;
 }
+
 .bottom:hover {
   background-color: #327E36;
   box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
@@ -151,16 +161,18 @@ transition: 0.15s ease-in;
 .box2:hover {
   transform: rotatey(60deg);
 } */
-.container{
+.container {
   perspective: 600px;
-  
+
 }
-.box2{
+
+.box2 {
   transition: all .5s;
   transform-origin: center;
   margin-top: 20px;
 }
-.box2:hover{
+
+.box2:hover {
   transform: translateY(6px);
 }
 
@@ -283,14 +295,19 @@ p {
   .resNav {
     display: none;
   }
-  .fabbut{
+
+  .fabbut {
     display: block;
     right: 1rem;
-    top:1.25rem;
-    position:absolute;
+    top: 1.25rem;
+    position: absolute;
     z-index: 7;
-    font-size: 1.5rem/* 24px */;
-    line-height: 2rem/* 32px */;
+    font-size: 1.5rem
+      /* 24px */
+    ;
+    line-height: 2rem
+      /* 32px */
+    ;
     --tw-text-opacity: 1;
     color: rgb(255 255 255 / var(--tw-text-opacity));
   }
@@ -300,22 +317,29 @@ p {
 @media only screen and (max-width: 400px) {
   body {
     font-size: 12px;
-    
+
   }
-  .arti{
-    display:flex;
+
+  .arti {
+    display: flex;
     flex-direction: column-reverse;
   }
-  .fabbut{
+
+  .fabbut {
     display: block;
     right: 1rem;
-    top:1.25rem;
-    position:absolute;
-    font-size: 1.5rem/* 24px */;
-    line-height: 2rem/* 32px */;
+    top: 1.25rem;
+    position: absolute;
+    font-size: 1.5rem
+      /* 24px */
+    ;
+    line-height: 2rem
+      /* 32px */
+    ;
     --tw-text-opacity: 1;
     color: rgb(255 255 255 / var(--tw-text-opacity));
   }
+
   .abc {
     display: none;
   }
@@ -327,9 +351,11 @@ p {
   .abcd2 {
     flex-direction: column;
   }
-  .abcd2 .abcd22{
+
+  .abcd2 .abcd22 {
     padding-left: 30px;
   }
+
   .abcd3 {
     align-items: center;
     flex-direction: column;
@@ -338,6 +364,7 @@ p {
   .resNav {
     display: none;
   }
+
   .dictionary {
     display: flex;
     flex-direction: column;
@@ -346,10 +373,110 @@ p {
     margin: 4rem auto;
     max-width: 90%;
   }
-  
-  .container-card{
+
+  .container-card {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
   }
 }
+
+/* Profile details */
+.dashboard-main {
+  background: #ECE9E6;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #FFFFFF, #ECE9E6);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #FFFFFF, #ECE9E6);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.05), 0 20px 50px 0 rgba(0, 0, 0, 0.1);
+  transition: 0.15s ease-in;
+
+  /* Hover and focus state */
+  &:hover,
+  &:focus-within {
+    box-shadow: 0 0 0 2px #1E2A55, 0 10px 60px 0 rgba(0, 0, 0, 0.1);
+    transform: translateY(-5px);
+  }
+}
+
+.edit-btn {
+  margin-top: 18px;
+  color: #fff;
+  font-size: 18px;
+  padding: 2px;
+  width: 3rem;
+  height: 2rem;
+  padding: 2px;
+  border: 2px solid #1E2A55;
+  border-radius: 10px;
+  background-color: #1E2A55;
+}
+
+.edit-btn:hover {
+  border: 2px solid #327E36;
+  background-color: #327E36;
+}
+
+.logout-img {
+  margin: 5px;
+  width: 2rem;
+  height: 2rem;
+  padding: 2px;
+  border-radius: 100%;
+  background-color: #1E2A55;
+}
+
+.logout-img:hover {
+  background-color: #327E36;
+}
+
+.field {
+  width: 140px;
+  background-color: transparent;
+  color: #000;
+  border: 1.5px solid #1E2A55;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 5px 10px;
+  border-radius: 5px;
+  transition: color 0.3s, background-color 0.8s;
+
+  &:hover {
+    color: #fff;
+    background-color: #1E2A55;
+  }
+}
+
+/* Profile details */
+/* edit user */
+.edit-user {
+  background: #ECE9E6;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #FFFFFF, #ECE9E6);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #FFFFFF, #ECE9E6);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.05), 0 20px 50px 0 rgba(0, 0, 0, 0.1);
+  transition: 0.15s ease-in;
+
+}
+.field2{
+  width: 200px;
+  background-color: transparent;
+  color: #000;
+  border: 1.5px solid #1E2A55;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 5px 10px;
+  border-radius: 5px;
+  
+}
+
+/* edit user */
