@@ -40,14 +40,14 @@ const EditForm = ({ user, onSave, onCancel }) => {
   };
 
   return (
-    <div className="max-w-md mx-auto p-6 bg-white shadow-md rounded-lg">
-      <h2 className="text-2xl font-bold mb-4">Edit Profile</h2>
+    <div className="max-w-md mx-auto p-6 bg-white shadow-md rounded-lg edit-user">
+      <h2 className="text-3xl font-bold mb-4">Edit Profile</h2>
       <ToastContainer className="sticky" />
       <form>
         <div className="mb-4">
           <label className="block text-gray-700 text-sm font-bold mb-2">Name:</label>
           <input
-            className="w-full p-2 border rounded-lg"
+            className="w-full p-2 border rounded-lg field2"
             type="text"
             name="name"
             value={editedUser.name}
@@ -57,7 +57,7 @@ const EditForm = ({ user, onSave, onCancel }) => {
         <div className="mb-4">
           <label className="block text-gray-700 text-sm font-bold mb-2">Email:</label>
           <input
-            className="w-full p-2 border rounded-lg"
+            className="w-full p-2 border rounded-lg field2"
             type="email"
             name="email"
             value={editedUser.email}
@@ -66,7 +66,7 @@ const EditForm = ({ user, onSave, onCancel }) => {
         <div className="mb-4">
           <label className="block text-gray-700 text-sm font-bold mb-2">Phone:</label>
           <input
-            className="w-full p-2 border rounded-lg"
+            className="w-full p-2 border rounded-lg field2"
             type="text"
             name="phone"
             value={editedUser.phone}
@@ -76,7 +76,7 @@ const EditForm = ({ user, onSave, onCancel }) => {
         <div className="mb-4">
           <label className="block text-gray-700 text-sm font-bold mb-2">Telegram No.:</label>
           <input
-            className="w-full p-2 border rounded-lg"
+            className="w-full p-2 border rounded-lg field2"
             type="text"
             name="telegram"
             value={editedUser.telegram}
@@ -86,7 +86,7 @@ const EditForm = ({ user, onSave, onCancel }) => {
         <div className="mb-4">
           <label className="block text-gray-700 text-sm font-bold mb-2">City:</label>
           <input
-            className="w-full p-2 border rounded-lg"
+            className="w-full p-2 border rounded-lg field2"
             type="text"
             name="city"
             value={editedUser.city}
@@ -96,7 +96,7 @@ const EditForm = ({ user, onSave, onCancel }) => {
         <div className="mb-4">
           <label className="block text-gray-700 text-sm font-bold mb-2">State:</label>
           <input
-            className="w-full p-2 border rounded-lg"
+            className="w-full p-2 border rounded-lg field2"
             type="text"
             name="state"
             value={editedUser.state}
@@ -106,7 +106,7 @@ const EditForm = ({ user, onSave, onCancel }) => {
         <div className="mb-4">
           <label className="block text-gray-700 text-sm font-bold mb-2">Pincode:</label>
           <input
-            className="w-full p-2 border rounded-lg"
+            className="w-full p-2 border rounded-lg field2"
             type="text"
             name="pincode"
             value={editedUser.pincode}

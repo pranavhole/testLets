@@ -37,16 +37,16 @@ const Dashboard = ({ handleLogout, data }) => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-100 py-6 flex flex-col justify-center sm:py-12">
+    <div className="min-h-screen bg-gray-100 py-6 flex flex-col justify-center sm:py-12 ">
       <div className="relative py-3 sm:max-w-xl sm:mx-auto">
         <ToastContainer className="sticky" />
-        <div className="relative w-full mx-auto px-4 py-10 bg-white shadow rounded-3xl sm:p-10">
+        <div className="relative w-full mx-auto px-4 py-10 bg-white shadow rounded-3xl sm:p-10 dashboard-main">
           <div className="flex justify-end">
-            <button className="relative pt-3" onClick={handleEditClick}>
+            <button className="relative edit-btn" onClick={handleEditClick}>
               EDIT
             </button>
             <button className="relative pt-3" onClick={handleLogout}>
-              <img src={logoutImg} className="h-6 bg-red-600" alt="Logout" />
+              <img src={logoutImg} className="h-6 logout-img" alt="Logout" />
             </button>
           </div>
           <div className="max-w-md mx-auto">
@@ -55,38 +55,38 @@ const Dashboard = ({ handleLogout, data }) => {
             ) : (
               <div>
                 {/* Display user details here */}
-                <h2 className="text-2xl font-bold mb-4">Profile Details</h2>
+                <h2 className="text-3xl font-bold mb-4">Profile Details</h2>
                 <div className="grid grid-cols-2 gap-4">
                   <div className="col-span-1">
                     <label className="mb-1 text-gray-800 font-bold">Name:</label>
-                    <p>{user.name}</p>
+                    <p className='field'>{user.name}</p>
                   </div>
                   <div className="col-span-1">
                     <label className="mb-1 text-gray-800 font-bold">Email:</label>
-                    <p>{user.email}</p>
+                    <p className='field'>{user.email}</p>
                   </div>
                   {user.phone && (
                     <div className="col-span-1">
                       <label className="mb-1 text-gray-800 font-bold">Phone:</label>
-                      <p>{user.phone}</p>
+                      <p className='field'>{user.phone}</p>
                     </div>
                   )}
                   {user.city && (
                     <div className="col-span-1">
                       <label className="mb-1 text-gray-800 font-bold">City:</label>
-                      <p>{user.city}</p>
+                      <p className='field'>{user.city}</p>
                     </div>
                   )}
                   {user.state && (
                     <div className="col-span-1">
                       <label className="mb-1 text-gray-800 font-bold">State:</label>
-                      <p>{user.state}</p>
+                      <p className='field'>{user.state}</p>
                     </div>
                   )}
                   {user.pincode && (
                     <div className="col-span-1">
                       <label className="mb-1 text-gray-800 font-bold">Pincode:</label>
-                      <p>{user.pincode}</p>
+                      <p className='field'>{user.pincode}</p>
                     </div>
                   )}
                 </div>
@@ -111,7 +111,7 @@ const Dashboard = ({ handleLogout, data }) => {
                       https://letstreadindia.onrender.com/?refer={user.referralCode}
                     </p>
                   ) : (
-                    <p> Buy The Course First</p>
+                    <p className='field'> Buy The Course First</p>
                   )}
                 </div>
               </div>
