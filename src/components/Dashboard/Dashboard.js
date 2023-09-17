@@ -59,34 +59,40 @@ const Dashboard = ({ handleLogout, data }) => {
                 <div className="grid grid-cols-2 gap-4">
                   <div className="col-span-1">
                     <label className="mb-1 text-gray-800 font-bold">Name:</label>
-                    <p className='field'>{user.name}</p>
+                    <input className='field' value={user.name}/>
                   </div>
                   <div className="col-span-1">
                     <label className="mb-1 text-gray-800 font-bold">Email:</label>
-                    <p className='field'>{user.email}</p>
+                    <input className='field' value={user.email}/>
                   </div>
                   {user.phone && (
                     <div className="col-span-1">
                       <label className="mb-1 text-gray-800 font-bold">Phone:</label>
-                      <p className='field'>{user.phone}</p>
+                      <input className='field' value={user.phone}/>
                     </div>
                   )}
                   {user.city && (
                     <div className="col-span-1">
                       <label className="mb-1 text-gray-800 font-bold">City:</label>
-                      <p className='field'>{user.city}</p>
+                      <input className='field' value={user.city}/>
+                    </div>
+                  )}
+                  {user.telephone && (
+                    <div className="col-span-1">
+                      <label className="mb-1 text-gray-800 font-bold">Telegram:</label>
+                      <input className='field' value={user.telephone}/>
                     </div>
                   )}
                   {user.state && (
                     <div className="col-span-1">
                       <label className="mb-1 text-gray-800 font-bold">State:</label>
-                      <p className='field'>{user.state}</p>
+                      <input className='field' value={user.state}/>
                     </div>
                   )}
                   {user.pincode && (
                     <div className="col-span-1">
                       <label className="mb-1 text-gray-800 font-bold">Pincode:</label>
-                      <p className='field'>{user.pincode}</p>
+                      <input className='field' value={user.pincode}/>
                     </div>
                   )}
                 </div>

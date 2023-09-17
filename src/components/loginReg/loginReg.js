@@ -29,6 +29,7 @@ function LoginReg({ handleLogin }) {
     },[])
     const login = async (e) => {
         e.preventDefault();
+        setLoading(true);
         console.log("running");
         const user = {
             "email": email,
@@ -86,6 +87,7 @@ function LoginReg({ handleLogin }) {
         } else {
             toast.error("Password or Email Is incorrect");
         }
+        setLoading(false);
     }
 
     const register = async (e) => {
@@ -202,7 +204,21 @@ function LoginReg({ handleLogin }) {
                         <Components.Input type='email' placeholder='Email' value={email} onChange={(e) => setEmail(e.target.value)} />
                         <Components.Input type='password' placeholder='Password' value={password} onChange={(e) => setPassword(e.target.value)} />
                         <Components.Anchor href='#'>Forgot your password?</Components.Anchor>
-                        <Components.Button onClick={login} >Sign In</Components.Button>
+                        
+                        {loading ? ( // Conditionally render a loading screen
+                            <Components.Button
+                                onClick={console.log("wait")}
+                            >
+                                Loading ...
+
+                            </Components.Button>
+                        ) : (
+                            <Components.Button
+                                onClick={login}
+                            >
+                                Sign In
+
+                            </Components.Button>)}
                     </Components.Form>
                 </Components.SignInContainer>
 
@@ -214,6 +230,7 @@ function LoginReg({ handleLogin }) {
                             <Components.Paragraph>
                                 To keep connected with us please login with your personal info
                             </Components.Paragraph>
+                            
                             <Components.GhostButton onClick={() => toggle(true)}>
                                 Sign In
                             </Components.GhostButton>
