@@ -13,12 +13,14 @@ const Dashboard = ({ handleLogout, data }) => {
     phone: data.phone,
     city: data.city,
     state: data.state,
+    telegram:data.telegram,
     pincode: data.pincode,
     referralCode: data.Myrefer,
   };
 
   const handleEditClick = () => {
     setIsEditing(true);
+    console.log(data)
   };
 
   const handleCancelEdit = () => {
@@ -77,10 +79,10 @@ const Dashboard = ({ handleLogout, data }) => {
                       <input className='field' value={user.city}/>
                     </div>
                   )}
-                  {user.telephone && (
+                  {user.telegram && (
                     <div className="col-span-1">
                       <label className="mb-1 text-gray-800 font-bold">Telegram:</label>
-                      <input className='field' value={user.telephone}/>
+                      <input className='field' value={user.telegram}/>
                     </div>
                   )}
                   {user.state && (

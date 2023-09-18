@@ -1,7 +1,7 @@
 import "./App.css";
 import Cookies from 'js-cookie';
 import { useState, useEffect } from "react";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { HashRouter, Route, Routes } from "react-router-dom";
 import Home from "./components/Home/Home";
 import HomeMain from "./HomeMain";
 import Dashboard from "./components/Dashboard/Dashboard";
@@ -39,7 +39,7 @@ function App() {
   }
 
   return (
-    <BrowserRouter>
+    <HashRouter basename="/">
       <Routes>
         <Route path="/" element={<HomeMain />} >
           <Route path="" element={<Home />} />
@@ -57,7 +57,7 @@ function App() {
           {/* <Route path="/login" element={<Login />} /> */}
         </Route>
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 
