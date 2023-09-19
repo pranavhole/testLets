@@ -196,6 +196,7 @@ function LoginReg({ handleLogin }) {
                                 Register
 
                             </Components.Button>)}
+                            <Components.Button className="sm:hidden" onClick={()=>toggle(true)}>Sign In</Components.Button>
                     </Components.Form>
                 </Components.SignUpContainer>
 
@@ -220,6 +221,7 @@ function LoginReg({ handleLogin }) {
                                 Sign In
 
                             </Components.Button>)}
+                            <Components.Button className="sm:hidden" onClick={()=>toggle(false)}>Sign Up</Components.Button>
                     </Components.Form>
                 </Components.SignInContainer>
 

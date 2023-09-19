@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
+padding:20px;
 background-color: #fff;
 border-radius: 10px;
 box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
@@ -9,6 +10,9 @@ overflow: hidden;
 width: 678px;
 max-width: 100%;
 min-height: 500px;
+@media (max-width: 768px) {
+  border-radius: 0px;
+}
 `;
 
 export const SignUpContainer = styled.div`
@@ -18,6 +22,10 @@ export const SignUpContainer = styled.div`
  transition: all 0.6s ease-in-out;
  right: 60%;
  width: 60%;
+ @media (max-width: 500px) {
+  width: 100%;
+  right:100%;
+}
  opacity: 0;
  z-index: 1;
  ${props => props.signinIn !== true ? `
@@ -37,6 +45,9 @@ transition: all 0.6s ease-in-out;
 left: 0;
 width: 60%;
 z-index: 2;
+@media (max-width: 500px) {
+  width: 100%;
+}
 ${props => (props.signinIn !== true ? `transform: translateX(100%);` : null)}
 `;
 
@@ -46,11 +57,11 @@ display: flex;
 align-items: center;
 justify-content: center;
 flex-direction: column;
-padding: 0 50px;
 height: 100%;
 @media (max-width: 768px) {
   padding: 0;
   font-size: 16px;
+  margin:19px;
 };
 text-align: center;
 `;
@@ -109,6 +120,10 @@ width: 40%;
 height: 100%;
 overflow: hidden;
 transition: transform 0.6s ease-in-out;
+@media (max-width: 500px) {
+  width: 0;
+  left:100%;
+}
 z-index: 100;
 ${props =>
     props.signinIn !== true ? `transform: translateX(-100%); left:40%;` : null}
