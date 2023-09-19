@@ -46,7 +46,7 @@ export default function Course3(data) {
             ></img>
             <div className="text-xl font-medium pt-2 text-[#000000]">
               Total Charges :{" "}
-              <span className="px-10 text-[#216825] font-medium max-sm:p-0">₹6,999</span>{" "}
+              <span className="px-10 text-[#216825] font-medium max-sm:p-0">₹ 6,999</span>{" "}
             </div>
           </div>
 
@@ -102,7 +102,7 @@ export default function Course3(data) {
             <li>Risk & Money Management, Human & Market Psychology & many more.</li>
           </ul>
           <p className="text-xl font-medium px-24 pt-8 max-sm:px-4 max-sm:flex max-sm:justify-center">
-           Course: Future&Options
+           Course: Future & Options
           </p>
           <ol className="text-xl font-normal px-28 list-disc pt-4 max-sm:px-8 max-sm:text-base">
             <li>Difference between Equity, Futures & Options.</li>
