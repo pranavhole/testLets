@@ -116,7 +116,7 @@ const Dashboard = ({ handleLogout, data }) => {
                     <p
                       className="text-gray-800 cursor-pointer"
                     >
-                      https://letstreadindia.onrender.com/?refer={user.referralCode}
+                      https://letstradeindia.co/?refer={user.referralCode}
                     </p>
                   ) : (
                     <p className='field'> Buy The Course First</p>

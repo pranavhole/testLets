@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 
 export default function Course2(data) {
   useEffect(() => {
+    console.log(window.location.hostname);
     const sectionId = "section1";
     const targetElement = document.getElementById(sectionId);
     if (targetElement) {
@@ -18,7 +19,7 @@ export default function Course2(data) {
   }, []);
   return (
     <>
-      <div className="flex justify-around pb-4 py-8 pt-20 section1  max-sm:flex-col max-sm:p-0">
+      <div className="flex justify-around pb-4 py-8 pt-20 section1 max-sm:flex-col max-sm:p-0">
         <div class="flex items-center pl-24 max-sm:p-0">
           <img
             src={process.env.PUBLIC_URL + "/Images/image8.png"}
