@@ -13,15 +13,15 @@ function LoginReg({ handleLogin }) {
     const history = useNavigate();
     const searchParams = new URLSearchParams(window.location.search);
     const course = searchParams.get('course');
-    const [refer, setRefer] = useState();
+    const [refer, setRefer] = useState("");
     const [loading, setLoading] = useState(false);
-
+    const [lastrefer,setLast]=useState("");
     useEffect(() => {
         const storedRefer = localStorage.getItem('refer');
         if (storedRefer) {
             setRefer(storedRefer);
         }
-    }, []);
+    },[]);
     useEffect(() => {
         if (refer === "null") {
             setRefer(null)
