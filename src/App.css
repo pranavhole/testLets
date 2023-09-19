@@ -378,6 +378,10 @@ p {
     flex-direction: column;
     flex-wrap: wrap;
   }
+  .slides-img{
+      border-top-left-radius: 0;
+      border-top-right-radius: 0;
+      }
 }
 
 /* Profile details */
