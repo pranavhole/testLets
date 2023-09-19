@@ -84,7 +84,7 @@ function Home() {
               style={titleStyles}
               className="mt-8 h-auto rounded-none text-center font-mulish text-4xl font-bold leading-tight tracking-normal text-[#000]  max-sm:text-xl max-sm:w-72 max-sm:m-2"
             >
-              We offer the following Stock Trading Courses
+              We Offer The Following Mentorship Programs
             </div>
             <dl className="justify-center dictionary flex my-0">
               {CourseCard.map(createCard)}
