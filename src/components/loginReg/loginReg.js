@@ -1,17 +1,18 @@
 import React, { useState, useEffect } from "react";
 import * as Components from './Components.js';
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useSearchParams} from "react-router-dom";
+
 import axios from "axios";
 import { ToastContainer, toast } from 'react-toastify';
 
 function LoginReg({ handleLogin }) {
+    const [searchParams] = useSearchParams();
     const [signIn, toggle] = React.useState(true);
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [phone, setPhone] = useState("");
     const [password, setPassword] = useState("");
     const history = useNavigate();
-    const searchParams = new URLSearchParams(window.location.search);
     const course = searchParams.get('course');
     const [refer, setRefer] = useState();
     const [loading, setLoading] = useState(false);
