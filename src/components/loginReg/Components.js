@@ -16,8 +16,8 @@ export const SignUpContainer = styled.div`
  top: 0;
  height: 100%;
  transition: all 0.6s ease-in-out;
- left: 0;
- width: 50%;
+ right: 60%;
+ width: 60%;
  opacity: 0;
  z-index: 1;
  ${props => props.signinIn !== true ? `
@@ -35,7 +35,7 @@ top: 0;
 height: 100%;
 transition: all 0.6s ease-in-out;
 left: 0;
-width: 50%;
+width: 60%;
 z-index: 2;
 ${props => (props.signinIn !== true ? `transform: translateX(100%);` : null)}
 `;
@@ -48,6 +48,10 @@ justify-content: center;
 flex-direction: column;
 padding: 0 50px;
 height: 100%;
+@media (max-width: 768px) {
+  padding: 0;
+  font-size: 16px;
+};
 text-align: center;
 `;
 
@@ -100,14 +104,14 @@ margin: 15px 0;
 export const OverlayContainer = styled.div`
 position: absolute;
 top: 0;
-left: 50%;
-width: 50%;
+left: 60%;
+width: 40%;
 height: 100%;
 overflow: hidden;
 transition: transform 0.6s ease-in-out;
 z-index: 100;
 ${props =>
-    props.signinIn !== true ? `transform: translateX(-100%);` : null}
+    props.signinIn !== true ? `transform: translateX(-100%); left:40%;` : null}
 `;
 
 export const Overlay = styled.div`

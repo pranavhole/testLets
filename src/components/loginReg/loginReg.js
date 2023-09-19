@@ -173,8 +173,8 @@ function LoginReg({ handleLogin }) {
         <div className="flex flex-col items-center justify-center h-[70vh] w-[100%] my-16">
             <ToastContainer className="sticky" />
             <Components.Container>
-                <Components.SignUpContainer signinIn={signIn}>
-                    <Components.Form>
+                <Components.SignUpContainer signinIn={signIn} >
+                    <Components.Form className=" max-sm:p-0">
                         <Components.Title>Create Account</Components.Title>
                         <Components.Input type='text' placeholder='Name' value={name} onChange={(e) => setName(e.target.value)} />
                         <Components.Input type='email' placeholder='Email' value={email} onChange={(e) => setEmail(e.target.value)} />
