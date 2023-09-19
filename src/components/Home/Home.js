@@ -53,13 +53,14 @@ function Home() {
 
   const slides = [
     { url: img4, title: "logo" },
-    { url: img1, title: "beach" },
-    { url: img2, title: "boat" },
-    { url: img3, title: "forest" },
+    // { url: img1, title: "beach" },
+    // { url: img2, title: "boat" },
+    // { url: img3, title: "forest" },
   ];
 
   const containerStyles = {
     margin: "0 auto",
+    borderRadiusTop:"",
   };
 
   const titleStyles = {
@@ -73,9 +74,9 @@ function Home() {
         <div className="flex flex-col justify-center space-y-4 py-8 max-sm:p-0">
           <div
             style={containerStyles}
-            className="w-[90vw] h-[80vh] max-sm:w-[100vw]"
+            className="w-[90vw] h-[80vh] max-sm:w-[100vw] "
           >
-            <ImageSlider slides={slides} />
+            <ImageSlider slides={slides}  className="slides-img"/>
           </div>
 
           <div className="flex flex-col justify-center items-center sel" id="section1">
