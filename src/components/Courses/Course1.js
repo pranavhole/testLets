@@ -63,20 +63,43 @@ export default function Course1(data) {
         <div className="flex flex-col">
           <h2 className="text-2xl font-bold px-24 max-sm:p-0 max-sm:justify-center max-sm:flex">Content:</h2>
           <p className="text-xl font-medium px-24 pt-4 max-sm:px-4 max-sm:flex max-sm:justify-center">
-            Why we need Technical Analysis
+          Part 1: Theory from 1990 To 2008.
+          </p>
+          <ol className="text-xl font-normal px-28 list-disc pt-8 max-sm:px-8 max-sm:text-base">
+            <li>Stock Price Movement Theory.</li>
+            <li>Basic & Core Concepts of Institutions.</li>
+            <li> I. PO. (ROI) Theory using Doji Candlesticks.</li>
+            <li>Complete, Incomplete & Takeover Candlesticks.</li>
+            <li>L&B and E&B Candlesticks (Institutions Candlesticks).</li>
+            <li>Supply & Demand Zones marking: Basic + Advanced (6 Types).</li>
+            <li>Introduction to HRM, LRM & CM Methods using LBL Theory.</li>
+            <li>NR & NRA Concepts & rules for Supply & Demand Zones Marking.</li>
+          </ol>
+          <p className="text-xl font-medium px-24 pt-4 max-sm:px-4 max-sm:flex max-sm:justify-center">
+          Part 2: Theory from 2008 To 2013.
+          </p>
+          <ol className="text-xl font-normal px-28 list-disc pt-8 max-sm:px-8 max-sm:text-base">
+            <li>Advanced NR, NRA & LBL Concepts.</li>
+            <li>Multiple Time Frames Analysis.</li>
+            <li>Institutions Peak & Valley Theory.</li>
+            <li>Institutions Odd Enhancers (6 Types).</li>
+            <li>Types of Entry, Exit & Targets (11 Concepts).</li>
+          </ol>
+          <p className="text-xl font-medium px-24 pt-4 max-sm:px-4 max-sm:flex max-sm:justify-center">
+          Part 3: Theory from 2013 onwards.
           </p>
           <ul className="text-xl font-normal px-28 list-disc pt-8 max-sm:px-8 max-sm:text-base">
-            <li>Candlestick Explanation And Patterns</li>
-            <li>Study of Price Action</li>
-            <li>Demand Supply</li>
-            <li>Trading on Multiple Time Frame (How to pick a perfect time frame based on your trading style)</li>
-            <li>How to scan stock in live market</li>
-            <li>Trend Analysis (Trading In The Zone Special)</li>
-            <li>Trend Analysis (Trading In The Zone Special)</li>
-            <li>Moving Average (Simple, Exponential, Linearly Weighted)</li>
-            <li>Algo Trader (How we can take advantage from them)</li>
-            <li>Market Traps</li>
-            <li>Trading against the Trend (Trading In The Zone Special)</li>
+            <li>Flip Zones.</li>
+            <li>Master Ema.</li>
+            <li>Master Zones.</li>
+            <li>Trend Analysis.</li>
+            <li>Origin of Price Action.</li>
+            <li>Breakout & Reversal Trading using Supply & Demand Zones.</li>
+            <li>Intraday, Swing & Long Term Trading as per Supply & Demand Zones.</li>
+            <li>Penny or Not Filtration using Advanced Supply & Demand Zones.</li>
+            <li>Institutions Odd Enhancers (9 Types).</li>
+            <li>How to Trade Against the Peak & Valley.</li>
+            <li>Risk & Money Management, Human & Market Psychology & many more.</li>
           </ul>
         </div>
       </div>
