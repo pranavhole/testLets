@@ -59,7 +59,7 @@ export default function Course2(data) {
             ></img>
             <div className="text-xl font-medium pt-2 text-[#000000]">
               Total Charges :{" "}
-              <span className="px-10 text-[#216825] font-medium  max-sm:p-0">₹ 2,999</span>{" "}
+              <span className="px-10 text-[#216825] font-medium  max-sm:p-0">₹2,999</span>{" "}
             </div>
           </div>
 

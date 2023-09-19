@@ -57,8 +57,8 @@ display: flex;
 align-items: center;
 justify-content: center;
 flex-direction: column;
+padding: 0 3rem;
 height: 100%;
-margin:19px;
 @media (max-width: 768px) {
   padding: 0;
   font-size: 16px;

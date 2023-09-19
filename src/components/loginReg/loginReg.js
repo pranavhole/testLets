@@ -51,19 +51,24 @@ function LoginReg({ handleLogin }) {
                     setTimeout(() => {
                         
                     }, 4000);
+                    let purpose;
                     if (course) {
                         let amount;
                         if (course === "Future") {
                             amount = 2999;
+                            purpose= "Future & Options"
                         }
                         if (course === "InstitutionFootprints") {
                             amount = 4999;
+                            purpose= "Institution Footprints"
                         }
                         if (course === "Combined") {
                             amount = 6999;
+                            purpose="Combined"
+                            
                         }
                         const info = {
-                            purpose: course,
+                            purpose: purpose,
                             amount: amount,
                             buyer_name: User.name,
                             email: User.email,
@@ -185,7 +190,7 @@ function LoginReg({ handleLogin }) {
                         <Components.Input type='email' placeholder='Email' value={email} onChange={(e) => setEmail(e.target.value.toLowerCase())} />
                         <Components.Input type='password' placeholder='Password' value={password} onChange={(e) => setPassword(e.target.value)} />
                         <Components.Input type='phone' placeholder='Phone' value={phone} onChange={(e) => setPhone(e.target.value)} />
-                        <Components.Input type='refer' placeholder='Referral' value={refer === "null" ? "" : refer} onChange={(e) => { setRefer(e.target.value) }} />
+                        <Components.Input type='refer' placeholder='Referral' value={refer === "null" ? "" : refer} onChange={(e) => { setRefer(e.target.value.toUpperCase()) }} />
                         {loading ? ( // Conditionally render a loading screen
                             <Components.Button
                                 onClick={console.log("wait")}
@@ -209,7 +214,7 @@ function LoginReg({ handleLogin }) {
                         <Components.Title>Sign in</Components.Title>
                         <Components.Input type='email' placeholder='Email' value={email} onChange={(e) =>{ setEmail(e.target.value.toLowerCase())}} />
                         <Components.Input type='password' placeholder='Password' value={password} onChange={(e) => setPassword(e.target.value)} />
-                        <Components.Anchor href='#'>Forgot your password?</Components.Anchor>
+                        {/* <Components.Anchor href='#'>Forgot your password?</Components.Anchor> */}
                         
                         {loading ? ( // Conditionally render a loading screen
                             <Components.Button
