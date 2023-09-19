@@ -30,12 +30,16 @@ const Dashboard = ({ handleLogout, data }) => {
  
 
   const handleCopyReferralCode = () => {
-    let text = 'https://tt-i9w7.onrender.com/?refer=' + user.referralCode
+    if(user.referralCode){
+    let text = 'https://letstradeindia.co/#/?refer=' + user.referralCode
     navigator.clipboard.writeText(text);
     setIsCopied(true);
     setTimeout(() => {
       setIsCopied(false);
-    }, 2000);
+    }, 2000);}
+    else{
+      alert("Please purchess the course")
+    }
   };
 
   return (
@@ -103,7 +107,7 @@ const Dashboard = ({ handleLogout, data }) => {
                     Referral link
                     <button
                       className="ml-2 focus:outline-none"
-                      onClick={handleCopyReferralCode}
+                      onClick={handleCopyReferralCode }
                     >
                       {isCopied ? (
                         <span className="text-green-500">Copied!</span>
@@ -116,7 +120,7 @@ const Dashboard = ({ handleLogout, data }) => {
                     <p
                       className="text-gray-800 cursor-pointer"
                     >
-                      https://letstradeindia.co/?refer={user.referralCode}
+                      https://letstradeindia.co/#/?refer={user.referralCode}
                     </p>
                   ) : (
                     <p className='field'> Buy The Course First</p>

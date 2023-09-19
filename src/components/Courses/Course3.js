@@ -9,7 +9,7 @@ export default function Course3(data) {
       <div className="flex justify-around pb-4 py-8 pt-20 max-sm:flex-col max-sm:p-0">
         <div class="flex items-center pl-24 max-sm:p-0">
           <img
-            src={"/Images/image8.png"}
+            src={"/Images/image-4.jpg"}
             className="rounded-2xl w-96  max-sm:rounded-none"
             alt=""
           />
@@ -23,7 +23,7 @@ export default function Course3(data) {
               alt="duration"
             ></img>
             <div className="text-xl font-medium pt-2 text-[#000000]">
-              Duration : <span className="px-20 font-normal max-sm:p-0">3 Months</span>{" "}
+              Duration : <span className="px-20 font-normal max-sm:p-0">42 Days</span>{" "}
             </div>
           </div>
 
@@ -62,10 +62,10 @@ export default function Course3(data) {
       <div className="flex flex-col p-12 max-sm:p-0 ">
         <div className="flex flex-col">
           <h2 className="text-2xl font-bold px-24 max-sm:p-0 max-sm:justify-center max-sm:flex">Content:</h2>
-          <p className="text-xl font-medium px-24 pt-4 max-sm:px-4 max-sm:flex max-sm:justify-center">
+          <p className="text-xl font-medium px-24 pt-8 max-sm:px-4 max-sm:flex max-sm:justify-center">
           Part 1: Theory from 1990 To 2008.
           </p>
-          <ol className="text-xl font-normal px-28 list-disc pt-8 max-sm:px-8 max-sm:text-base">
+          <ol className="text-xl font-normal px-28 list-disc pt-4 max-sm:px-8 max-sm:text-base">
             <li>Stock Price Movement Theory.</li>
             <li>Basic & Core Concepts of Institutions.</li>
             <li> I. PO. (ROI) Theory using Doji Candlesticks.</li>
@@ -75,20 +75,20 @@ export default function Course3(data) {
             <li>Introduction to HRM, LRM & CM Methods using LBL Theory.</li>
             <li>NR & NRA Concepts & rules for Supply & Demand Zones Marking.</li>
           </ol>
-          <p className="text-xl font-medium px-24 pt-4 max-sm:px-4 max-sm:flex max-sm:justify-center">
+          <p className="text-xl font-medium px-24 pt-8 max-sm:px-4 max-sm:flex max-sm:justify-center">
           Part 2: Theory from 2008 To 2013.
           </p>
-          <ol className="text-xl font-normal px-28 list-disc pt-8 max-sm:px-8 max-sm:text-base">
+          <ol className="text-xl font-normal px-28 list-disc pt-4 max-sm:px-8 max-sm:text-base">
             <li>Advanced NR, NRA & LBL Concepts.</li>
             <li>Multiple Time Frames Analysis.</li>
             <li>Institutions Peak & Valley Theory.</li>
             <li>Institutions Odd Enhancers (6 Types).</li>
             <li>Types of Entry, Exit & Targets (11 Concepts).</li>
           </ol>
-          <p className="text-xl font-medium px-24 pt-4 max-sm:px-4 max-sm:flex max-sm:justify-center">
+          <p className="text-xl font-medium px-24 pt-8 max-sm:px-4 max-sm:flex max-sm:justify-center">
           Part 3: Theory from 2013 onwards.
           </p>
-          <ul className="text-xl font-normal px-28 list-disc pt-8 max-sm:px-8 max-sm:text-base">
+          <ul className="text-xl font-normal px-28 list-disc pt-4 max-sm:px-8 max-sm:text-base">
             <li>Flip Zones.</li>
             <li>Master Ema.</li>
             <li>Master Zones.</li>
@@ -101,10 +101,10 @@ export default function Course3(data) {
             <li>How to Trade Against the Peak & Valley.</li>
             <li>Risk & Money Management, Human & Market Psychology & many more.</li>
           </ul>
-          <p className="text-xl font-medium px-24 pt-4 max-sm:px-4 max-sm:flex max-sm:justify-center">
+          <p className="text-xl font-medium px-24 pt-8 max-sm:px-4 max-sm:flex max-sm:justify-center">
            Course: Future&Options
           </p>
-          <ol className="text-xl font-normal px-28 list-disc pt-8 max-sm:px-8 max-sm:text-base">
+          <ol className="text-xl font-normal px-28 list-disc pt-4 max-sm:px-8 max-sm:text-base">
             <li>Difference between Equity, Futures & Options.</li>
             <li>Logic behind Future.</li>
             <li> Logic behind Call & Put Options.</li>

@@ -86,7 +86,7 @@ function Home() {
             >
               We offer the following Stock Trading Courses
             </div>
-            <dl className="justify-center dictionary flex">
+            <dl className="justify-center dictionary flex my-0">
               {CourseCard.map(createCard)}
             </dl>
           </div>

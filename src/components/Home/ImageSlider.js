@@ -3,10 +3,14 @@ import { useState } from "react";
 const slideStyles = {
   width: "100%",
   height: "100%",
-  borderRadius: "10px",
+  borderRadius: "0px",
   backgroundSize: "cover",
   backgroundPosition: "center",
+  '@media (min-width: 768px)': {
+    borderRadius: "0px", // Corrected to an object with properties
+  },
 };
+
 
 const rightArrowStyles = {
   position: "absolute",
@@ -69,12 +73,12 @@ const ImageSlider = ({ slides }) => {
   return (
     <div style={sliderStyles}>
       <div>
-        <div onClick={goToPrevious} style={leftArrowStyles}>
+        {/* <div onClick={goToPrevious} style={leftArrowStyles}>
           ❰
         </div>
         <div onClick={goToNext} style={rightArrowStyles}>
           ❱
-        </div>
+        </div> */}
       </div>
       <div style={slideStylesWidthBackground}></div>
       <div style={dotsContainerStyles}>

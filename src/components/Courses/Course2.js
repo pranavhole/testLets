@@ -22,7 +22,7 @@ export default function Course2(data) {
       <div className="flex justify-around pb-4 py-8 pt-20 section1 max-sm:flex-col max-sm:p-0">
         <div class="flex items-center pl-24 max-sm:p-0">
           <img
-            src={process.env.PUBLIC_URL + "/Images/image8.png"}
+            src={process.env.PUBLIC_URL + "/Images/image-4.jpg"}
             className="rounded-2xl w-96 max-sm:rounded-none"
             alt=""
           />
@@ -36,7 +36,7 @@ export default function Course2(data) {
               alt="duration"
             ></img>
             <div className="text-xl font-medium pt-2 text-[#000000]">
-              Duration : <span className="px-20 font-normal  max-sm:p-0">3 Months</span>{" "}
+              Duration : <span className="px-20 font-normal  max-sm:p-0">12 Days</span>{" "}
             </div>
           </div>
 
@@ -75,7 +75,7 @@ export default function Course2(data) {
       <div className="flex flex-col p-12 max-sm:p-0 ">
         <div className="flex flex-col">
           <h2 className="text-2xl font-bold px-24 max-sm:p-0 max-sm:justify-center max-sm:flex">Content:</h2>
-          <ol className="text-xl font-normal px-28 list-disc pt-8 max-sm:px-8 max-sm:text-base">
+          <ol className="text-xl font-normal px-28 list-disc pt-4 max-sm:px-8 max-sm:text-base">
             <li>Difference between Equity, Futures & Options.</li>
             <li>Logic behind Future.</li>
             <li> Logic behind Call & Put Options.</li>
