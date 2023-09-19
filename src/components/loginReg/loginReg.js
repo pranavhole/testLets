@@ -13,18 +13,18 @@ function LoginReg({ handleLogin }) {
     const history = useNavigate();
     const searchParams = new URLSearchParams(window.location.search);
     const course = searchParams.get('course');
-    const [refer, setRefer] = useState("");
+    const [refer, setRefer] = useState();
     const [loading, setLoading] = useState(false);
-    const [lastrefer,setLast]=useState("");
+    
     useEffect(() => {
         const storedRefer = localStorage.getItem('refer');
         if (storedRefer) {
             setRefer(storedRefer);
         }
-    },[]);
+    }, []);
     useEffect(() => {
         if (refer === "null") {
-            setRefer(null)
+            setRefer("")
         }
     },[])
     const login = async (e) => {
@@ -173,8 +173,8 @@ function LoginReg({ handleLogin }) {
         <div className="flex flex-col items-center justify-center h-[70vh] w-[100%] my-16">
             <ToastContainer className="sticky" />
             <Components.Container>
-                <Components.SignUpContainer signinIn={signIn} >
-                    <Components.Form className=" max-sm:p-0">
+                <Components.SignUpContainer signinIn={signIn}>
+                    <Components.Form>
                         <Components.Title>Create Account</Components.Title>
                         <Components.Input type='text' placeholder='Name' value={name} onChange={(e) => setName(e.target.value)} />
                         <Components.Input type='email' placeholder='Email' value={email} onChange={(e) => setEmail(e.target.value)} />
