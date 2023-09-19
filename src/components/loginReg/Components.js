@@ -58,10 +58,11 @@ align-items: center;
 justify-content: center;
 flex-direction: column;
 height: 100%;
+margin:19px;
 @media (max-width: 768px) {
   padding: 0;
   font-size: 16px;
-  margin:19px;
+    margin:19px;
 };
 text-align: center;
 `;
@@ -122,6 +123,7 @@ overflow: hidden;
 transition: transform 0.6s ease-in-out;
 @media (max-width: 500px) {
   width: 0;
+  display: none;
   left:100%;
 }
 z-index: 100;
