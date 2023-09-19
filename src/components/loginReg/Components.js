@@ -9,7 +9,7 @@ position: relative;
 overflow: hidden;
 width: 678px;
 max-width: 100%;
-min-height: 500px;
+min-height: 550px;
 @media (max-width: 768px) {
   border-radius: 0px;
 }

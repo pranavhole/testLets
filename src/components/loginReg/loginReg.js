@@ -28,6 +28,9 @@ function LoginReg({ handleLogin }) {
             setRefer("")
         }
     },[])
+    useEffect(()=>{
+        console.log(email);
+    },[email])
     const login = async (e) => {
         e.preventDefault();
         setLoading(true);
@@ -36,6 +39,7 @@ function LoginReg({ handleLogin }) {
             "email": email,
             "password": password
         }
+        console.log(user.email);
         if (email && password) {
             console.log("running");
             try {
@@ -178,7 +182,7 @@ function LoginReg({ handleLogin }) {
                     <Components.Form>
                         <Components.Title>Create Account</Components.Title>
                         <Components.Input type='text' placeholder='Name' value={name} onChange={(e) => setName(e.target.value)} />
-                        <Components.Input type='email' placeholder='Email' value={email} onChange={(e) => setEmail(e.target.value)} />
+                        <Components.Input type='email' placeholder='Email' value={email} onChange={(e) => setEmail(e.target.value.toLowerCase())} />
                         <Components.Input type='password' placeholder='Password' value={password} onChange={(e) => setPassword(e.target.value)} />
                         <Components.Input type='phone' placeholder='Phone' value={phone} onChange={(e) => setPhone(e.target.value)} />
                         <Components.Input type='refer' placeholder='Referral' value={refer === "null" ? "" : refer} onChange={(e) => { setRefer(e.target.value) }} />
@@ -203,7 +207,7 @@ function LoginReg({ handleLogin }) {
                 <Components.SignInContainer signinIn={signIn}>
                     <Components.Form>
                         <Components.Title>Sign in</Components.Title>
-                        <Components.Input type='email' placeholder='Email' value={email} onChange={(e) => setEmail(e.target.value)} />
+                        <Components.Input type='email' placeholder='Email' value={email} onChange={(e) =>{ setEmail(e.target.value.toLowerCase())}} />
                         <Components.Input type='password' placeholder='Password' value={password} onChange={(e) => setPassword(e.target.value)} />
                         <Components.Anchor href='#'>Forgot your password?</Components.Anchor>
                         
