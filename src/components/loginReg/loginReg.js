@@ -7,7 +7,7 @@ import { ToastContainer, toast } from 'react-toastify';
 
 function LoginReg({ handleLogin }) {
     const [searchParams] = useSearchParams();
-    const [signIn, toggle] = React.useState(true);
+    const [signIn, toggle] = React.useState(false);
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [phone, setPhone] = useState("");

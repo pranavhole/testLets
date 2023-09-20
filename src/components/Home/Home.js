@@ -70,11 +70,11 @@ function Home() {
 
   return (
     <>
-      <div className="flex flex-wrap justify-evenly">
+      <div className="flex flex-wrap justify-evenly max-sm:mt-0 max-sm:pt-0">
         <div className="flex flex-col justify-center space-y-4 py-8 max-sm:p-0">
           <div
             style={containerStyles}
-            className="w-[90vw] h-[80vh] max-sm:w-[100vw] "
+            className="w-[90vw] h-[80vh] max-sm:w-[100vw] max-sm:h-[50vh] "
           >
             <ImageSlider slides={slides}  className="slides-img"/>
           </div>
@@ -86,7 +86,7 @@ function Home() {
             >
               We Offer The Following Mentorship Programs
             </div>
-            <dl className="justify-center dictionary flex my-0">
+            <dl className="justify-center dictionary flex my-0 max-sm:mt-0">
               {CourseCard.map(createCard)}
             </dl>
           </div>
