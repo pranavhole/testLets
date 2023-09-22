@@ -80,7 +80,7 @@ function LoginReg({ handleLogin }) {
                             const paymentRes = await axios.post('https://testlt.onrender.com/payment', info);
                             console.log('payment_request', paymentRes.data);
                             window.location.href = paymentRes.data;
-                            history('/dashboard')
+                            history('/dashboard');
                         } catch (paymentError) {
                             console.error(paymentError);
                             toast.error("An error occurred during payment.");
