@@ -46,6 +46,9 @@ const Dashboard = ({ handleLogout, data }) => {
     <div className="min-h-screen bg-gray-100 py-6 flex flex-col justify-center sm:py-12 ">
       <div className="relative py-3 sm:max-w-xl sm:mx-auto">
         <ToastContainer className="sticky" />
+        {!(user.state && user.city && user.pincode) && (
+                    <div className=' text-red-500 mb-5 font-bold'>Please fill in the complete data by clicking on the Edit button.</div>
+                  )}
         <div className="relative w-full mx-auto px-4 py-10 bg-white shadow rounded-3xl sm:p-10 dashboard-main max-sm:rounded-none">
           <div className="flex justify-end">
             <button className="relative edit-btn" onClick={handleEditClick}>
