@@ -157,8 +157,6 @@ function LoginReg({ handleLogin }) {
                                             console.error(paymentError);
                                             toast.error("An error occurred during payment.");
                                         }
-                                    } else {
-                                        history('/dashboard');
                                     }
                                 } else {
                                     toast.error(loginRes.data.message);
