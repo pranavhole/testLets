@@ -16,6 +16,7 @@ import MyCoursesPage from "./components/myLearning/MyLearning"
 import StockChart from "./components/myLearning/Treadcanvas/Treadcanvas";
 import DiscussionSection from "./components/discussion/discussion";
 import LoginReg from "./components/loginReg/loginReg"
+import PasswordUpdate from "./components/loginReg/PasswordUpdate";
 // import CommentSection from "./components/discussion/discussion";
 
 function App() {
@@ -54,6 +55,7 @@ function App() {
           <Route path="/course2" element={<Course2 data={user}/>}/>
           <Route path="/reg" element={<LoginReg handleLogin={handleData}/>}/>
           <Route path="/course3" element={<Course3 data={user}/>}/>
+          <Route path="/updatePass" element={<PasswordUpdate/>}/>
           {/* <Route path="/login" element={<Login />} /> */}
         </Route>
       </Routes>
