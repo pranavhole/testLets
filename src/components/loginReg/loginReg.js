@@ -52,41 +52,41 @@ function LoginReg({ handleLogin }) {
                         
                     }, 4000);
                     let purpose;
-                    if (course) {
-                        let amount;
-                        if (course === "Future") {
-                            amount = 2999;
-                            purpose= "Future & Options"
-                        }
-                        if (course === "InstitutionFootprints") {
-                            amount = 4999;
-                            purpose= "Institution Footprints"
-                        }
-                        if (course === "Combined") {
-                            amount = 6999;
-                            purpose="Combined"
+                    // if (course) {
+                    //     let amount;
+                    //     if (course === "Future") {
+                    //         amount = 2999;
+                    //         purpose= "Future & Options"
+                    //     }
+                    //     if (course === "InstitutionFootprints") {
+                    //         amount = 4999;
+                    //         purpose= "Institution Footprints"
+                    //     }
+                    //     if (course === "Combined") {
+                    //         amount = 6999;
+                    //         purpose="Combined"
                             
-                        }
-                        const info = {
-                            purpose: purpose,
-                            amount: amount,
-                            buyer_name: User.name,
-                            email: User.email,
-                            phone: User.phone,
-                            redirect_url: `https://testlt.onrender.com/payment/callback?user_id=${User._id}`,
-                            webhooks_url: '/webhook/'
-                        };
-                        try {
-                            const paymentRes = await axios.post('https://testlt.onrender.com/payment', info);
-                            console.log('payment_request', paymentRes.data);
-                            window.location.href = paymentRes.data;
-                        } catch (paymentError) {
-                            console.error(paymentError);
-                            toast.error("An error occurred during payment.");
-                        }
-                    } else {
-                        history('/dashboard');
-                    }
+                    //     }
+                    //     const info = {
+                    //         purpose: purpose,
+                    //         amount: amount,
+                    //         buyer_name: User.name,
+                    //         email: User.email,
+                    //         phone: User.phone,
+                    //         redirect_url: `https://testlt.onrender.com/payment/callback?user_id=${User._id}`,
+                    //         webhooks_url: '/webhook/'
+                    //     };
+                    //     try {
+                    //         const paymentRes = await axios.post('https://testlt.onrender.com/payment', info);
+                    //         console.log('payment_request', paymentRes.data);
+                    //         window.location.href = paymentRes.data;
+                    //     } catch (paymentError) {
+                    //         console.error(paymentError);
+                    //         toast.error("An error occurred during payment.");
+                    //     }
+                    // } else {
+                    //     history('/dashboard');
+                    // }
                 } else {
                     toast.error(loginRes.data.message);
                 }
