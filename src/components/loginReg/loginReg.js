@@ -87,6 +87,7 @@ function LoginReg({ handleLogin }) {
                     // } else {
                     //     history('/dashboard');
                     // }
+                    history('/dashboard');
                 } else {
                     toast.error(loginRes.data.message);
                 }
@@ -128,35 +129,36 @@ function LoginReg({ handleLogin }) {
                                 if (loginRes.data.user) {
                                     const User = loginRes.data.user;
                                     handleLogin(User);
-                                    if (course) {
-                                        let amount;
-                                        if (course === "Future") {
-                                            amount = 2999;
-                                        }
-                                        if (course === "InstitutionFootprints") {
-                                            amount = 4999;
-                                        }
-                                        if (course === "Combined") {
-                                            amount = 6999;
-                                        }
-                                        const info = {
-                                            purpose: course,
-                                            amount: amount,
-                                            buyer_name: user.name,
-                                            email: user.email,
-                                            phone: user.phone,
-                                            redirect_url: `https://testlt.onrender.com/payment/callback?user_id=${User._id}`,
-                                            webhooks_url: '/webhook/'
-                                        };
-                                        try {
-                                            const paymentRes = await axios.post('https://testlt.onrender.com/payment', info);
-                                            console.log('payment_request', paymentRes.data);
-                                            window.location.href = paymentRes.data;
-                                        } catch (paymentError) {
-                                            console.error(paymentError);
-                                            toast.error("An error occurred during payment.");
-                                        }
-                                    }
+                                    // if (course) {
+                                    //     let amount;
+                                    //     if (course === "Future") {
+                                    //         amount = 2999;
+                                    //     }
+                                    //     if (course === "InstitutionFootprints") {
+                                    //         amount = 4999;
+                                    //     }
+                                    //     if (course === "Combined") {
+                                    //         amount = 6999;
+                                    //     }
+                                    //     const info = {
+                                    //         purpose: course,
+                                    //         amount: amount,
+                                    //         buyer_name: user.name,
+                                    //         email: user.email,
+                                    //         phone: user.phone,
+                                    //         redirect_url: `https://testlt.onrender.com/payment/callback?user_id=${User._id}`,
+                                    //         webhooks_url: '/webhook/'
+                                    //     };
+                                    //     try {
+                                    //         const paymentRes = await axios.post('https://testlt.onrender.com/payment', info);
+                                    //         console.log('payment_request', paymentRes.data);
+                                    //         window.location.href = paymentRes.data;
+                                    //     } catch (paymentError) {
+                                    //         console.error(paymentError);
+                                    //         toast.error("An error occurred during payment.");
+                                    //     }
+                                    // }
+                                    history('/dashboard');
                                 } else {
                                     toast.error(loginRes.data.message);
                                 }
